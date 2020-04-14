@@ -1,0 +1,2 @@
+module Qool.Styles
+singleton QoolStyle 1.0 QoolStyle.qml

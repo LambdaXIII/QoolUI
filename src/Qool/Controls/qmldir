@@ -1,0 +1,5 @@
+module Qool.Controls
+
+QoolButton 1.0 QoolButton.qml
+QoolWindow 1.0 QoolWindow.qml
+QoolTextButton 1.0 QoolTextButton.qml

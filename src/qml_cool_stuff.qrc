@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Qool/Components/CutCornerBox.qml</file>
+        <file>Qool/Components/qmldir</file>
+        <file>Qool/Controls/QoolButton.qml</file>
+        <file>Qool/Controls/qmldir</file>
+        <file>Qool/Controls/QoolWindow.qml</file>
+        <file>Qool/Components/WindowCloseButton.qml</file>
+        <file>Qool/Styles/QoolStyle.qml</file>
+        <file>Qool/Styles/qmldir</file>
+        <file>Qool/Components/DragMoveArea.qml</file>
+        <file>Qool/Controls/QoolAbstractButton.qml</file>
+        <file>Qool/Controls/QoolTextButton.qml</file>
+    </qresource>
+</RCC>
