@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<qool_pages>
+    <item>
+        <title>欢迎页</title>
+        <page>FrontPage.qml</page>
+    </item>
+
+<item>
+    <title>普通文本按钮</title>
+    <page>QoolButtonsPage.qml</page>
+</item>
+
+</qool_pages>

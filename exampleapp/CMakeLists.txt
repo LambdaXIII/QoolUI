@@ -19,6 +19,7 @@ add_executable(QoolUIExampleApp
   qml.qrc
 )
 
+list(APPEND QML_IMPORT_PATH ${PROJECT_SOURCE_DIR})
 
 target_compile_definitions(QoolUIExampleApp
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)

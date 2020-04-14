@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>PageSelector.qml</file>
+        <file>PagesModel.qml</file>
+        <file>table_of_pages.xml</file>
+        <file>ExamplePageLoader.qml</file>
+        <file>Pages/QoolButtonsPage.qml</file>
+        <file>Pages/ExpPage.qml</file>
+        <file>Pages/FrontPage.qml</file>
     </qresource>
 </RCC>

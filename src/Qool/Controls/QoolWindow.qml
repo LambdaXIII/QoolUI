@@ -8,8 +8,25 @@ Window {
   flags: Qt.CustomizeWindowHint | Qt.FramelessWindowHint | Qt.Window
   color: "transparent"
 
+  readonly property alias hiddenBox: hiddenBox
   property bool closeButtonEnabled: true
   property bool resizable: true
+
+  property real topSpace: Math.max(titleText.bottomLine, backgroundBox.cutSize)
+  property real leftSpace: backgroundBox.strokeWidth + 10
+  property real rightSpace: Math.max(leftSpace, resizeIndicator.width)
+  property real bottomSpace: backgroundBox.strokeWidth + 10
+
+  Item {
+    id: hiddenBox
+    visible: false
+    anchors.fill: parent
+    anchors.topMargin: topSpace
+    anchors.leftMargin: leftSpace
+    anchors.rightMargin: rightSpace
+    anchors.bottomMargin: bottomSpace
+    z: -90
+  }
 
   Text {
     id: titleText
@@ -20,13 +37,15 @@ Window {
     horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignTop
     color: QoolStyle.textColor
+    readonly property real bottomLine: titleText.anchors.topMargin
+                                       + backgroundBox.strokeWidth + titleText.height
   }
 
   CutCornerBox {
     id: backgroundBox
     anchors.fill: parent
     z: -99
-    strokeWidth: 2
+    strokeWidth: 1
     cutSize: QoolStyle.windowCutSize
     DragMoveArea {
       anchors.fill: parent

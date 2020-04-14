@@ -10,6 +10,7 @@ QtObject {
   property color warningColor: "#e23e2c"
   property color highlightColor: "orange"
   property color controlBackgroundColor: "#2b2b2b"
+  property color controlBackgroundColor2: "#101010"
   property color textColor: "#cfcfcf"
   property color disabledColor: "#636363"
 

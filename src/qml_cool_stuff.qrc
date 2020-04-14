@@ -11,5 +11,6 @@
         <file>Qool/Components/DragMoveArea.qml</file>
         <file>Qool/Controls/QoolAbstractButton.qml</file>
         <file>Qool/Controls/QoolTextButton.qml</file>
+        <file>Qool/Controls/QoolPane.qml</file>
     </qresource>
 </RCC>
