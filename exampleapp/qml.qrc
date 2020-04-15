@@ -8,5 +8,8 @@
         <file>Pages/QoolButtonsPage.qml</file>
         <file>Pages/ExpPage.qml</file>
         <file>Pages/FrontPage.qml</file>
+        <file>Pages/CutCornerBoxPage.qml</file>
+        <file>assets/picture1.jpg</file>
+        <file>assets/picture2.jpg</file>
     </qresource>
 </RCC>

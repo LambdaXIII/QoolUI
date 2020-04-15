@@ -13,7 +13,9 @@ BasicCutCornerBox::BasicCutCornerBox(QQuickItem* p)
   , m_backColor(Qt::black)
   , m_strokeColor(Qt::red)
   , m_hasBack(true)
-  , m_hasStroke(true) {
+  , m_hasStroke(true)
+  , m_imageOpacity(1)
+  , m_imageFillStroke(false) {
   connect(this, &BasicCutCornerBox::strokeWidthInternalChanged, this,
     &BasicCutCornerBox::updateStrokes);
   connect(this, &BasicCutCornerBox::cutSizeInternalChanged, this,
@@ -25,18 +27,41 @@ BasicCutCornerBox::BasicCutCornerBox(QQuickItem* p)
   connect(this, &BasicCutCornerBox::hasBackChanged, [&] { update(); });
   connect(this, &BasicCutCornerBox::hasStrokeChanged,
     [&] { updateStrokes(m_strokeWidth, m_strokeWidth); });
+
+  connect(
+    this, &BasicCutCornerBox::imagePathChanged, [&] { update(); });
+  connect(
+    this, &BasicCutCornerBox::imageOpacityChanged, [&] { update(); });
+  connect(this, &BasicCutCornerBox::imageFillStrokeChanged,
+    [&] { update(); });
 }
 
 void BasicCutCornerBox::paint(QPainter* painter) {
   auto core_path = cutCornerPath(m_strokeWidth);
+  auto full_path = cutCornerPath();
 
   //画背景
   if (m_hasBack)
     painter->fillPath(core_path, QBrush(m_backColor));
 
+  //画图片
+  if (m_imageOpacity > 0 && (! m_imagePath.isEmpty())) {
+    auto img = scaledImage();
+    if (! img.isNull()) {
+      auto image_path = m_imageFillStroke ? full_path : core_path;
+      painter->setClipPath(image_path);
+      auto old_opacity = painter->opacity();
+      painter->setOpacity(m_imageOpacity);
+      painter->drawImage(imageRect(img), img);
+      //恢复设置
+      painter->setOpacity(old_opacity);
+      painter->setClipping(false);
+    }
+  }
+
   //画边框
   if (m_hasStroke) {
-    auto stroke_path = cutCornerPath().subtracted(core_path);
+    auto stroke_path = full_path.subtracted(core_path);
     painter->fillPath(stroke_path, QBrush(m_strokeColor));
   }
 }
@@ -121,6 +146,23 @@ void BasicCutCornerBox::updateTLCorner(
   QRectF box(
     0, 0, _cut_size + _stroke_w / 2, _cut_size + _stroke_w / 2);
   update(box.toRect());
+}
+
+QImage BasicCutCornerBox::scaledImage() const {
+  QImage img(m_imagePath);
+  qreal background_ratio = qreal(width()) / qreal(height());
+  qreal image_ratio = qreal(img.width()) / qreal(img.height());
+  if (background_ratio < image_ratio)
+    return img.scaledToHeight(height(), Qt::SmoothTransformation);
+  return img.scaledToWidth(width(), Qt::SmoothTransformation);
+}
+
+QRectF BasicCutCornerBox::imageRect(const QImage& img) const {
+  qreal w = img.isNull() ? 0 : img.width();
+  qreal h = img.isNull() ? 0 : img.height();
+  auto x = (width() - w) / 2;
+  auto y = (height() - h) / 2;
+  return { x, y, w, h };
 }
 
 QOOL_NS_END

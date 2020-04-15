@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 
+project(QoolUIBundle)
+
+
 list(APPEND QML_DIRS "${QML_IMPORT_PATH}")
 list(APPEND QML_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/src")
 list(APPEND QML_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/exampleapp")

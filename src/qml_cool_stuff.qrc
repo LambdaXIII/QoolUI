@@ -12,5 +12,6 @@
         <file>Qool/Controls/QoolAbstractButton.qml</file>
         <file>Qool/Controls/QoolTextButton.qml</file>
         <file>Qool/Controls/QoolPane.qml</file>
+        <file>Qool/Components/CutCornerHighlightCover.qml</file>
     </qresource>
 </RCC>

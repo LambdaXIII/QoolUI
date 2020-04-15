@@ -3,6 +3,7 @@
 
 #include "qool_global.h"
 
+#include <QImage>
 #include <QPainterPath>
 #include <QQuickItem>
 #include <QQuickPaintedItem>
@@ -18,6 +19,9 @@ class QOOL_SHARED_EXPORT BasicCutCornerBox: public QQuickPaintedItem {
   QOOL_WRITABLE_PROPERTY(QColor, strokeColor)
   QOOL_WRITABLE_PROPERTY(bool, hasBack)
   QOOL_WRITABLE_PROPERTY(bool, hasStroke)
+  QOOL_WRITABLE_PROPERTY(qreal, imageOpacity)
+  QOOL_WRITABLE_PROPERTY(QString, imagePath)
+  QOOL_WRITABLE_PROPERTY(bool, imageFillStroke)
 
 public:
   explicit BasicCutCornerBox(QQuickItem* p = nullptr);
@@ -48,6 +52,9 @@ protected:
 
   /** 只更新左上角 */
   Q_SLOT void updateTLCorner(qreal old_cutSize, qreal new_cutSize);
+
+  QImage scaledImage() const;
+  QRectF imageRect(const QImage& img) const;
 };
 
 QOOL_NS_END

@@ -93,20 +93,8 @@ Control {
     z: 90
   }
 
-  CutCornerBox {
-    anchors.fill: backBox
-    z: 30
-    cutSize: backBox.cutSize
-    backColor: QoolStyle.highlightColor
-    hasStroke: false
-    strokeWidth: backBox.strokeWidth
-    visible: control.down
-    Text {
-      text: qsTr("啪")
-      font.pixelSize: 40
-      anchors.centerIn: parent
-    }
-    clip: true
+  CutCornerHighlightCover {
+    visible: down
   }
 
   onClicked: {

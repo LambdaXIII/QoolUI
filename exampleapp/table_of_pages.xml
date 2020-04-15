@@ -9,5 +9,9 @@
     <title>普通文本按钮</title>
     <page>QoolButtonsPage.qml</page>
 </item>
+<item>
+    <title>切角图框</title>
+    <page>CutCornerBoxPage.qml</page>
+</item>
 
 </qool_pages>
