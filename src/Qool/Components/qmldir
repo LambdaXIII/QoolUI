@@ -5,3 +5,5 @@ CutCornerHighlightCover 1.0 CutCornerHighlightCover.qml
 CutCornerControlBack 1.0 CutCornerControlBack.qml
 WindowCloseButton 1.0 WindowCloseButton.qml
 DragMoveArea 1.0 DragMoveArea.qml
+SmallIndicator 1.0 SmallIndicator.qml
+ControlLockedCover 1.0 ControlLockedCover.qml

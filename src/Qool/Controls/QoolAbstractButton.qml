@@ -32,19 +32,6 @@ Control {
       anchors.left: parent.left
       anchors.bottom: parent.bottom
       anchors.margins: 5
-      z: 1
-    }
-    Rectangle {
-      width: 6
-      height: width
-      radius: width / 2
-      border.width: 0
-      color: QoolStyle.warningColor
-      visible: !enabled
-      anchors.left: parent.left
-      anchors.bottom: parent.bottom
-      anchors.margins: 5
-      z: 2
     }
 
     Rectangle {
@@ -92,6 +79,8 @@ Control {
     onExited: mouseOvered = false
     z: 90
   }
+
+  ControlLockedCover {}
 
   CutCornerHighlightCover {
     visible: down

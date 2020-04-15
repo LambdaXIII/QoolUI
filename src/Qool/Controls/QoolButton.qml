@@ -15,8 +15,7 @@ AbstractButton {
     strokeWidth: hovered ? 10 : 5
   }
 
-//  containmentMask: backBox
-
+  //  containmentMask: backBox
   topPadding: backBox.strokeWidth
   bottomPadding: backBox.strokeWidth
   leftPadding: backBox.strokeWidth
@@ -29,4 +28,6 @@ AbstractButton {
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
   }
+
+
 }

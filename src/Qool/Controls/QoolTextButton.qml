@@ -1,5 +1,6 @@
 import QtQuick 2.14
 import Qool.Styles 1.0
+import Qool.Components 1.0
 
 QoolAbstractButton {
   id: control
@@ -11,4 +12,5 @@ QoolAbstractButton {
     verticalAlignment: Text.AlignVCenter
     color: enabled ? (checked ? QoolStyle.highlightColor : QoolStyle.textColor) : QoolStyle.disabledColor
   }
+
 }
