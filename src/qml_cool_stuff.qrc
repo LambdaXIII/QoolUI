@@ -16,5 +16,7 @@
         <file>Qool/Components/CutCornerControlBack.qml</file>
         <file>Qool/Components/SmallIndicator.qml</file>
         <file>Qool/Components/ControlLockedCover.qml</file>
+        <file>Qool/Controls/Qool.qml</file>
+        <file>Qool/Controls/QoolRadioButton.qml</file>
     </qresource>
 </RCC>

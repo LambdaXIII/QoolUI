@@ -10,5 +10,5 @@ BasicWindowCloseButton {
 
   strokeColor: QoolStyle.backgroundColor
 
-  fillColor: down ? "white" : hovered ? QoolStyle.highlightColor : QoolStyle.warningColor
+  fillColor: down ? QoolStyle.yellowColor : hovered ? QoolStyle.highlightColor : QoolStyle.negativeColor
 }

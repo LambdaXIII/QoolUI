@@ -12,6 +12,7 @@ ExpPage {
       height: 50
       text: qsTr("可以勾选的按钮")
       checkable: true
+      animationEnabled: animButton.checked
     }
 
     QoolTextButton {
@@ -25,6 +26,15 @@ ExpPage {
       width: 200
       height: 50
       text: qsTr("普通文本按钮")
+      animationEnabled: animButton.checked
+    }
+
+    QoolRadioButton {
+      id: animButton
+      text: qsTr("开启动画效果")
+      width: 200
+      height: 25
+      animationEnabled: animButton.checked
     }
   }
 }

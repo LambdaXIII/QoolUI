@@ -13,25 +13,22 @@ Control {
   readonly property bool mouseOvered: mouseArea.mouseOvered
   property bool checkable: false
   property bool checked: false
+  property bool animationEnabled: false
 
   signal clicked
 
   background: CutCornerBox {
     id: backBox
-    cutSize: QoolStyle.controlCutSize
-    strokeWidth: 2
-    strokeColor: enabled ? (mouseOvered | checked ? QoolStyle.highlightColor : QoolStyle.backgroundStrokeColor) : QoolStyle.disabledColor
-    backColor: QoolStyle.controlBackgroundColor
-    Rectangle {
-      width: 6
-      height: width
-      radius: width / 2
-      border.width: 0
-      color: checked ? QoolStyle.highlightColor : QoolStyle.textColor
-      visible: checkable
-      anchors.left: parent.left
-      anchors.bottom: parent.bottom
-      anchors.margins: 5
+    cutSize: QoolStyle.buttonCutSize
+    strokeWidth: 1
+    strokeColor: enabled ? (mouseOvered | checked ? QoolStyle.highlightColor : QoolStyle.backgroundStrokeColor) : QoolStyle.warningColor
+    backColor: enabled ? QoolStyle.controlBackgroundColor : QoolStyle.controlBackgroundColor2
+
+    Behavior on strokeColor {
+      enabled: animationEnabled
+      ColorAnimation {
+        duration: 200
+      }
     }
 
     Rectangle {
@@ -53,6 +50,13 @@ Control {
         }
       }
       opacity: 0.2
+      Behavior on opacity {
+        enabled: animationEnabled
+        NumberAnimation {
+          duration: 200
+        }
+      }
+
       visible: mouseOvered
     }
   }
@@ -80,10 +84,9 @@ Control {
     z: 90
   }
 
-  ControlLockedCover {}
-
   CutCornerHighlightCover {
     visible: down
+    cutSize: backBox.cutSize
   }
 
   onClicked: {
