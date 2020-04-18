@@ -13,5 +13,6 @@
         <file>assets/picture2.jpg</file>
         <file>Pages/MenuPage.qml</file>
         <file>Pages/DialogPage.qml</file>
+        <file>Pages/InputControlsPage.qml</file>
     </qresource>
 </RCC>

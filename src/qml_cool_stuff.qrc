@@ -15,7 +15,6 @@
         <file>Qool/Components/CutCornerControlBack.qml</file>
         <file>Qool/Components/SmallIndicator.qml</file>
         <file>Qool/Components/ControlLockedCover.qml</file>
-        <file>Qool/Controls/Qool.qml</file>
         <file>Qool/Controls/QoolRadioButton.qml</file>
         <file>Qool/Controls/QoolMenuItem.qml</file>
         <file>Qool/Controls/QoolMenuBar.qml</file>
@@ -26,5 +25,8 @@
         <file>Qool/Controls/QoolButtonGroup.qml</file>
         <file>Qool/Controls/QoolDialogWindow.qml</file>
         <file>Qool/Controls/QoolDialogButton.qml</file>
+        <file>Qool/Controls/Inputs/BasicInputControl.qml</file>
+        <file>Qool/Controls/Inputs/qmldir</file>
+        <file>Qool/Controls/Inputs/QoolTextInputControl.qml</file>
     </qresource>
 </RCC>

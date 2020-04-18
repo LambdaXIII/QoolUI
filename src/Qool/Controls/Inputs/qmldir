@@ -1,0 +1,3 @@
+module Qool.Controls.Inputs
+
+QoolTextInputControl 1.0 QoolTextInputControl.qml

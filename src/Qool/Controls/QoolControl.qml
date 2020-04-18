@@ -22,4 +22,7 @@ Control {
   leftPadding: backBox.strokeWidth + extraContentPadding
   rightPadding: backBox.strokeWidth + extraContentPadding
   bottomPadding: backBox.strokeWidth + extraContentPadding
+
+  implicitWidth: implicitContentWidth + leftPadding + rightPadding
+  implicitHeight: implicitContentHeight + topPadding + bottomPadding
 }

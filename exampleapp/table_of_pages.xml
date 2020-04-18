@@ -21,5 +21,9 @@
     <title>对话框</title>
     <page>DialogPage.qml</page>
 </item>
+<item>
+    <title>输入控件</title>
+    <page>InputControlsPage.qml</page>
+</item>
 
 </qool_pages>
