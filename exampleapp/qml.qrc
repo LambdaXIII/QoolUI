@@ -12,5 +12,6 @@
         <file>assets/picture1.jpg</file>
         <file>assets/picture2.jpg</file>
         <file>Pages/MenuPage.qml</file>
+        <file>Pages/DialogPage.qml</file>
     </qresource>
 </RCC>

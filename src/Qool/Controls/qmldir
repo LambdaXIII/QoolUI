@@ -7,6 +7,9 @@ QoolControl 1.0 QoolControl.qml
 QoolRadioButton 1.0 QoolRadioButton.qml
 QoolTextField 1.0 QoolTextField.qml
 
+QoolDialogWindow 1.0 QoolDialogWindow.qml
+QoolDialogButton 1.0 QoolDialogButton.qml
+
 QoolMenuBar 1.0 QoolMenuBar.qml
 QoolMenuItem 1.0 QoolMenuItem.qml
 QoolMenu 1.0 QoolMenu.qml

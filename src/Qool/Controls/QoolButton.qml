@@ -5,13 +5,14 @@ import Qool.Components 1.0
 QoolAbstractButton {
   id: control
 
-  implicitHeight: 50
+  implicitHeight: contentItem.implicitHeight + topPadding + bottomPadding
   implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
   contentItem: Text {
     id: mainText
     text: control.text
     font: control.font
+//    leftPadding: backBox.showTitle ? 0 : backBox.cutSize
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     color: enabled ? (checked ? QoolStyle.highlightColor : QoolStyle.textColor) : QoolStyle.warningColor

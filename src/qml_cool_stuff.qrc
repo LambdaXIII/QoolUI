@@ -25,5 +25,6 @@
         <file>Qool/Controls/QoolTextField.qml</file>
         <file>Qool/Controls/QoolButtonGroup.qml</file>
         <file>Qool/Controls/QoolDialogWindow.qml</file>
+        <file>Qool/Controls/QoolDialogButton.qml</file>
     </qresource>
 </RCC>

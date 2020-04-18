@@ -6,7 +6,7 @@ ExpPage {
   Column {
     spacing: 15
     anchors.centerIn: parent
-    QoolTextButton {
+    QoolButton {
       id: bb
       width: 200
       height: 50
@@ -15,14 +15,14 @@ ExpPage {
       animationEnabled: animButton.checked
     }
 
-    QoolTextButton {
+    QoolButton {
       width: 200
       height: 50
       text: qsTr("禁用的按钮")
       enabled: false
     }
 
-    QoolTextButton {
+    QoolButton {
       width: 200
       height: 50
       text: qsTr("普通文本按钮")

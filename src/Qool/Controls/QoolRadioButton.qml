@@ -6,8 +6,8 @@ QoolAbstractButton {
 
   checkable: true
 
-  implicitWidth: mainText.width + leftPadding + rightPadding
-  implicitHeight: mainText.height + topPadding + bottomPadding
+  implicitWidth: mainText.implicitWidth + leftPadding + rightPadding + backBox.cutSize*2
+  implicitHeight: mainText.implicitHeight + topPadding + bottomPadding + 4
 
   readonly property real indicatorMargin: 2
 

@@ -8,13 +8,20 @@ Window {
   flags: Qt.CustomizeWindowHint | Qt.FramelessWindowHint | Qt.Window
   color: "transparent"
 
+  minimumHeight: backgroundBox.cutSize + resizeIndicator.height + 20
+  minimumWidth: backgroundBox.cutSize + resizeIndicator.width + 20
+
+  width: 500
+  height: 400
+
   readonly property alias hiddenBox: hiddenBox
   property bool closeButtonEnabled: true
   property bool resizable: true
 
   property real topSpace: Math.max(titleText.bottomLine, backgroundBox.cutSize)
   property real leftSpace: backgroundBox.strokeWidth + 10
-  property real rightSpace: Math.max(leftSpace, resizeIndicator.width)
+  property real rightSpace: Math.max(leftSpace,
+                                     root.resizable ? resizeIndicator.width : 0)
   property real bottomSpace: backgroundBox.strokeWidth + 10
 
   Item {
@@ -94,11 +101,11 @@ Window {
       onWantToMove: {
         if (isFreeToResize) {
           isFreeToResize = false
-          root.width += offsetX
-          root.height += offsetY
+          root.width = Math.max(root.width + offsetX, root.minimumWidth)
+          root.height = Math.max(root.height + offsetY, root.minimumHeight)
           isFreeToResize = true
         }
       }
     }
-  }//resizeIndicator
+  } //resizeIndicator
 }
