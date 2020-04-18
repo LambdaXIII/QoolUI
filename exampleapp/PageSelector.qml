@@ -3,7 +3,7 @@ import Qool.Controls 1.0
 import QtQuick.Controls 2.12
 import Qool.Styles 1.0
 
-QoolPane {
+QoolControl {
   id: control
   signal pageSelected(string page)
   alterBackgroundColor: false

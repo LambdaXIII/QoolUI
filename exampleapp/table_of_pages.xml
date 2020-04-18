@@ -13,5 +13,9 @@
     <title>切角图框</title>
     <page>CutCornerBoxPage.qml</page>
 </item>
+<item>
+    <title>菜单效果</title>
+    <page>MenuPage.qml</page>
+</item>
 
 </qool_pages>

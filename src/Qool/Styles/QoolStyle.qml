@@ -31,12 +31,17 @@ QtObject {
   property color negativeColor: "#ff5555"
 
   property color purpleColor: "#bd93f9"
-  property color yellowColor: "#f1fa8c"
+  property color yellowColor: tooltipColor
 
   property real windowCutSize: 40
   property real controlCutSize: 10
   property real buttonCutSize: 5
+  property real menuCutSize: 5
 
   property color textColor: foregroundColor
   property color backgroundStrokeColor: "#a49ca5"
+  property color tooltipColor: "#f1fa8c"
+
+  property real menuBarFontPixelSize: 14
+  property real menuTextFontPixelSize: 12
 }

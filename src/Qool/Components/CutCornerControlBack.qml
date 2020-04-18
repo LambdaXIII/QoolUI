@@ -28,4 +28,5 @@ CutCornerBox {
 
   readonly property real contentTopSpace: Math.max(availableTopSpace,
                                                    titleText.bottomLineY)
+
 }

@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>Qool/Components/CutCornerBox.qml</file>
         <file>Qool/Components/qmldir</file>
-        <file>Qool/Controls/QoolButton.qml</file>
         <file>Qool/Controls/qmldir</file>
         <file>Qool/Controls/QoolWindow.qml</file>
         <file>Qool/Components/WindowCloseButton.qml</file>
@@ -11,12 +10,17 @@
         <file>Qool/Components/DragMoveArea.qml</file>
         <file>Qool/Controls/QoolAbstractButton.qml</file>
         <file>Qool/Controls/QoolTextButton.qml</file>
-        <file>Qool/Controls/QoolPane.qml</file>
+        <file>Qool/Controls/QoolControl.qml</file>
         <file>Qool/Components/CutCornerHighlightCover.qml</file>
         <file>Qool/Components/CutCornerControlBack.qml</file>
         <file>Qool/Components/SmallIndicator.qml</file>
         <file>Qool/Components/ControlLockedCover.qml</file>
         <file>Qool/Controls/Qool.qml</file>
         <file>Qool/Controls/QoolRadioButton.qml</file>
+        <file>Qool/Controls/QoolMenuItem.qml</file>
+        <file>Qool/Controls/QoolMenuBar.qml</file>
+        <file>Qool/Controls/QoolMenu.qml</file>
+        <file>Qool/Controls/QoolMenuSeparator.qml</file>
+        <file>Qool/Controls/QoolMenuBanner.qml</file>
     </qresource>
 </RCC>

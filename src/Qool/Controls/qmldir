@@ -1,7 +1,12 @@
 module Qool.Controls
 
-QoolButton 1.0 QoolButton.qml
 QoolWindow 1.0 QoolWindow.qml
 QoolTextButton 1.0 QoolTextButton.qml
-QoolPane 1.0 QoolPane.qml
+QoolControl 1.0 QoolControl.qml
 QoolRadioButton 1.0 QoolRadioButton.qml
+
+QoolMenuBar 1.0 QoolMenuBar.qml
+QoolMenuItem 1.0 QoolMenuItem.qml
+QoolMenu 1.0 QoolMenu.qml
+QoolMenuSeparator 1.0 QoolMenuSeparator.qml
+QoolMenuBanner 1.0 QoolMenuBanner.qml
