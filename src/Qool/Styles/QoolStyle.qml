@@ -37,6 +37,7 @@ QtObject {
   property real controlCutSize: 10
   property real buttonCutSize: 5
   property real menuCutSize: 5
+  property real dialogCutSize: controlCutSize
 
   property color textColor: foregroundColor
   property color backgroundStrokeColor: "#a49ca5"
@@ -48,4 +49,5 @@ QtObject {
   property real controlMainTextFontPixelSize: 12
   property real controlImportantTextSize: 35
   property real tooltipTextFontPixelSize: 10
+  property real dialogTitleFontPixelSize: controlTitleFontPixelSize
 }
