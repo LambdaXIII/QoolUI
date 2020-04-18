@@ -13,11 +13,15 @@ MenuSeparator {
   property alias contentText: contentText
   property alias radius: backBox.radius
 
-  padding: 3
-  topInset: 5
+  topInset: 3
   bottomInset: topInset
-  leftInset: 5
+  leftInset: 3
   rightInset: leftInset
+
+  horizontalPadding: 8
+  verticalPadding: 5
+
+  font.pixelSize: QoolStyle.tooltipTextFontPixelSize
 
   background: Rectangle {
     id: backBox

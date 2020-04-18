@@ -14,14 +14,21 @@ Control {
   property bool checkable: false
   property bool checked: false
   property bool animationEnabled: false
+  property string title
+  property bool showTitle: false
+  property alias titleText: backBox.titleText
+  property real extraContentPadding: 0
+  property color highlightColor: QoolStyle.highlightColor
 
   signal clicked
 
-  background: CutCornerBox {
+  background: CutCornerControlBack {
     id: backBox
+    title: control.title
+    showTitle: control.showTitle
     cutSize: QoolStyle.buttonCutSize
     strokeWidth: 1
-    strokeColor: enabled ? (mouseOvered | checked ? QoolStyle.highlightColor : QoolStyle.backgroundStrokeColor) : QoolStyle.warningColor
+    strokeColor: enabled ? (mouseOvered | checked ? control.highlightColor : QoolStyle.backgroundStrokeColor) : QoolStyle.warningColor
     backColor: enabled ? QoolStyle.controlBackgroundColor : QoolStyle.controlBackgroundColor2
 
     Behavior on strokeColor {
@@ -41,7 +48,7 @@ Control {
       gradient: Gradient {
         GradientStop {
           position: 1
-          color: QoolStyle.highlightColor
+          color: control.highlightColor
         }
 
         GradientStop {
@@ -61,10 +68,11 @@ Control {
     }
   }
 
-  leftPadding: backBox.strokeWidth
-  rightPadding: backBox.strokeWidth
-  bottomPadding: backBox.strokeWidth
-  topPadding: backBox.strokeWidth
+  leftPadding: backBox.strokeWidth + extraContentPadding
+  rightPadding: backBox.strokeWidth + extraContentPadding
+  bottomPadding: backBox.strokeWidth + extraContentPadding
+  topPadding: backBox.strokeWidth + extraContentPadding
+              + (control.showTitle ? backBox.contentTopSpace : 0)
 
   MouseArea {
     id: mouseArea
@@ -81,7 +89,7 @@ Control {
     property bool mouseOvered: false
     onEntered: mouseOvered = true
     onExited: mouseOvered = false
-    z: 90
+    z: 31
   }
 
   CutCornerHighlightCover {

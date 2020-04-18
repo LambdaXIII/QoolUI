@@ -8,6 +8,8 @@ Text {
   property color backColor: QoolStyle.warningColor
   property color strokeColor: QoolStyle.backgroundColor
 
+  property alias strokeWidth: box.border.width
+
   font.pixelSize: 8
   color: strokeColor
   font.bold: true
@@ -18,6 +20,7 @@ Text {
   bottomPadding: 2
 
   Rectangle {
+    id: box
     anchors.fill: parent
     radius: 3
     border.color: strokeColor

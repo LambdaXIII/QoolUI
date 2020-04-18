@@ -6,7 +6,7 @@ QoolAbstractButton {
   id: control
 
   implicitHeight: 50
-  implicitWidth: mainText.implicitWidth + leftPadding + rightPadding
+  implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
   contentItem: Text {
     id: mainText
@@ -26,8 +26,8 @@ QoolAbstractButton {
 
   SmallIndicator {
     id: checkerIndicator
-    anchors.left: mainText.left
-    anchors.bottom: mainText.bottom
+    anchors.left: contentItem.left
+    anchors.bottom: contentItem.bottom
     text: control.checked ? qsTr("已选") : qsTr("可选")
     visible: control.checkable
     backColor: control.checked ? QoolStyle.highlightColor : QoolStyle.textColor
@@ -42,8 +42,8 @@ QoolAbstractButton {
 
   ControlLockedCover {
     id: lockedCover
-    anchors.bottom: mainText.bottom
-    anchors.right: mainText.right
+    anchors.bottom: contentItem.bottom
+    anchors.right: contentItem.right
     Behavior on opacity {
       enabled: animationEnabled
       NumberAnimation {

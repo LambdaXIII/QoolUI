@@ -44,4 +44,8 @@ QtObject {
 
   property real menuBarFontPixelSize: 14
   property real menuTextFontPixelSize: 12
+  property real controlTitleFontPixelSize: 10
+  property real controlMainTextFontPixelSize: 12
+  property real controlImportantTextSize: 35
+  property real tooltipTextFontPixelSize: 10
 }

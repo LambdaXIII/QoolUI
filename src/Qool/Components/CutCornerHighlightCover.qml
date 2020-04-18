@@ -10,7 +10,7 @@ CutCornerBox {
   property color lowColor: QoolStyle.backgroundColor
 
   clip: true
-  z: 90
+  z: 30
 
   anchors.fill: parent
 

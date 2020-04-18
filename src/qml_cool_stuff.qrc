@@ -9,7 +9,7 @@
         <file>Qool/Styles/qmldir</file>
         <file>Qool/Components/DragMoveArea.qml</file>
         <file>Qool/Controls/QoolAbstractButton.qml</file>
-        <file>Qool/Controls/QoolTextButton.qml</file>
+        <file>Qool/Controls/QoolButton.qml</file>
         <file>Qool/Controls/QoolControl.qml</file>
         <file>Qool/Components/CutCornerHighlightCover.qml</file>
         <file>Qool/Components/CutCornerControlBack.qml</file>
@@ -22,5 +22,7 @@
         <file>Qool/Controls/QoolMenu.qml</file>
         <file>Qool/Controls/QoolMenuSeparator.qml</file>
         <file>Qool/Controls/QoolMenuBanner.qml</file>
+        <file>Qool/Controls/QoolTextField.qml</file>
+        <file>Qool/Controls/QoolButtonGroup.qml</file>
     </qresource>
 </RCC>

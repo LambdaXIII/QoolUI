@@ -29,3 +29,7 @@ target_link_libraries(${target_name} Qt5::Core Qt5::Quick)
 if(WIN32)
   target_compile_definitions(${target_name} PRIVATE OS_WIN)
 endif(WIN32)
+
+#list(APPEND QML_DIRS "${QML_IMPORT_PATH}")
+#list(APPEND QML_DIRS "${PROJECT_SOURCE_DIR}")
+#set(QML_IMPORT_PATH ${QML_DIRS} CACHE STRING "Creator qml path" FORCE)

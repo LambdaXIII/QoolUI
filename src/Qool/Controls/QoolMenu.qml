@@ -19,8 +19,8 @@ Menu {
   background: CutCornerControlBack {
     id: backBox
     cutSize: menu.showTitle ? QoolStyle.menuCutSize : 0
-    titleText.visible: showTitle
-    titleText.text: menu.title
+    showTitle: menu.showTitle
+    title: menu.title
     implicitWidth: itemWidth + menu.leftPadding + menu.rightPadding
     implicitHeight: itemHeight
     alterBackgroundColor: false

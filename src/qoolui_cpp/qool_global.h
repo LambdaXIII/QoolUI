@@ -51,4 +51,22 @@ public:                                                                \
   Q_SIGNAL void name##Changed(const type& value);                      \
   Q_SIGNAL void name##InternalChanged(type old, const type& current);
 
+#define QOOL_WRITABLE_OBJ_PROPERTY(type, name)                         \
+protected:                                                             \
+  type m_##name;                                                       \
+  Q_PROPERTY(                                                          \
+    type name READ name WRITE set_##name NOTIFY name##Changed)         \
+public:                                                                \
+  type name() const { return m_##name; }                               \
+  void set_##name(type value) {                                        \
+    if (value == m_##name)                                             \
+      return;                                                          \
+    auto old_value = m_##name;                                         \
+    m_##name = value;                                                  \
+    emit name##Changed(m_##name);                                      \
+    emit name##InternalChanged(old_value, m_##name);                   \
+  }                                                                    \
+  Q_SIGNAL void name##Changed(type value);                             \
+  Q_SIGNAL void name##InternalChanged(type old, type current);
+
 #endif // QOOL_GLOBAL_H
