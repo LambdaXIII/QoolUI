@@ -21,6 +21,10 @@ ExpPage {
     hasCancelButton: cancelSwitch.checked
     showToolBar: barSwitch.checked
     resizable: resizeSwitch.checked
+    QoolDialogButton {
+      text: qsTr("自行添加的按钮")
+      parent: dialog.toolBarRow
+    }
     Column {
       anchors.centerIn: dialog.hiddenBox
       spacing: 6
@@ -63,6 +67,7 @@ ExpPage {
       radius: 5
       z: -20
     }
+
     Text {
       x: mainRangeBox.x + 5
       y: mainRangeBox.y + 5
@@ -71,10 +76,5 @@ ExpPage {
       font.pixelSize: 10
       opacity: 0.8
     }
-
-    QoolDialogButton {
-      text: qsTr("自行添加的按钮")
-      parent: dialog.toolBarRow
-    }
-  }
+  } //dialog
 }

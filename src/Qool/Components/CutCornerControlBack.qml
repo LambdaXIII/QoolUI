@@ -15,7 +15,7 @@ CutCornerBox {
     id: titleText
     text: qsTr("控件标题")
     visible: showTitle
-    color: QoolStyle.backgroundStrokeColor
+    color: strokeColor
     font.pixelSize: QoolStyle.controlTitleFontPixelSize
     horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignVCenter

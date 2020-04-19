@@ -17,6 +17,7 @@ BasicInputControl {
     selectedTextColor: control.backBox.backColor
     selectByMouse: true
     verticalAlignment: TextInput.AlignVCenter
+    horizontalAlignment: TextInput.AlignRight
     onEditingFinished: {
       control.value = displayText
       focus = false

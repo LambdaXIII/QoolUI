@@ -1,3 +1,4 @@
 module Qool.Controls.Inputs
 
 QoolTextInputControl 1.0 QoolTextInputControl.qml
+QoolSwitchControl 1.0 QoolSwitchControl.qml

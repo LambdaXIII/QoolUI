@@ -28,5 +28,6 @@
         <file>Qool/Controls/Inputs/BasicInputControl.qml</file>
         <file>Qool/Controls/Inputs/qmldir</file>
         <file>Qool/Controls/Inputs/QoolTextInputControl.qml</file>
+        <file>Qool/Controls/Inputs/QoolSwitchControl.qml</file>
     </qresource>
 </RCC>
