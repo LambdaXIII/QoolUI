@@ -1,6 +1,7 @@
 #ifndef QOOL_REGISTER_CLASSES_H
 #define QOOL_REGISTER_CLASSES_H
 
+#include "basiccolorist.h"
 #include "basiccutcornerbox.h"
 #include "basicqoolbuttongroup.h"
 #include "basicwindowclosebutton.h"
@@ -17,6 +18,8 @@ void qool_register_classes() {
 
   qmlRegisterType<QoolUI::BasicQoolButtonGroup>(
     QOOL_ERI, "BasicQoolButtonGroup");
+
+  qmlRegisterType<QoolUI::BasicColorist>(QOOL_ERI, "BasicColorist");
 
 #undef QOOL_ERI
 }

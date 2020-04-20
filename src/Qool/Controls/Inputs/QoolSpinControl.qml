@@ -103,7 +103,7 @@ BasicInputControl {
         }
       }
     } //indicator
-  }
+  } //contentItem:
 
   QtObject {
     id: core

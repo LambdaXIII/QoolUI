@@ -32,5 +32,8 @@
         <file>Qool/Controls/Inputs/QoolSpinControl.qml</file>
         <file>Qool/Controls/Inputs/internal_functions.js</file>
         <file>Qool/Controls/Inputs/BasicInputSmallButton.qml</file>
+        <file>Qool/Controls/Inputs/QoolColorControl.qml</file>
+        <file>assets/color_name_table.csv</file>
+        <file>Qool/Components/Colorist.qml</file>
     </qresource>
 </RCC>
