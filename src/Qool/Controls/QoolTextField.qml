@@ -15,6 +15,7 @@ TextInput {
   selectionColor: QoolStyle.infoColor
   selectedTextColor: QoolStyle.textColor
   selectByMouse: true
+  verticalAlignment: TextInput.AlignVCenter
 
   onEditingFinished: focus = false
 }

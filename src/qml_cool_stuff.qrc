@@ -29,5 +29,8 @@
         <file>Qool/Controls/Inputs/qmldir</file>
         <file>Qool/Controls/Inputs/QoolTextInputControl.qml</file>
         <file>Qool/Controls/Inputs/QoolSwitchControl.qml</file>
+        <file>Qool/Controls/Inputs/QoolSpinControl.qml</file>
+        <file>Qool/Controls/Inputs/internal_functions.js</file>
+        <file>Qool/Controls/Inputs/BasicInputSmallButton.qml</file>
     </qresource>
 </RCC>

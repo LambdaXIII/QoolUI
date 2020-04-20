@@ -11,15 +11,20 @@ BasicInputControl {
   property string currentValue: currentIndex < tags.length ? tags[currentIndex] : ""
 
   contentItem: Item {
-    Rectangle {
+    Item {
+      x: 2
       height: parent.height
-      width: 8
-      border.width: 1
-      border.color: QoolStyle.backgroundStrokeColor
-      color: enabled ? "transparent" : QoolStyle.negativeColor
+      width: 4
+      Rectangle {
+        anchors.fill: parent
+        border.width: 1
+        border.color: QoolStyle.backgroundStrokeColor
+        color: "transparent"
+        opacity: 0.5
+      }
       Rectangle {
         width: parent.width
-        color: QoolStyle.highlightColor
+        color: enabled ? QoolStyle.highlightColor : QoolStyle.negativeColor
         border.width: 0
         height: tags.length == 0 ? parent.height : parent.height / tags.length
         y: currentIndex * height
@@ -29,6 +34,7 @@ BasicInputControl {
             duration: 200
           }
         }
+        opacity: 0.6
       }
     }
 

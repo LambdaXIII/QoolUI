@@ -31,5 +31,15 @@ ExpPage {
       currentIndex: 2
       enabled: switcher.currentIndex % 2 != 0
     }
-  }
+
+    QoolSpinControl {
+      title: qsTr("超级复杂的数字输入控件")
+    }
+
+    QoolSpinControl {
+      title: qsTr("被禁用的数字输入控件")
+      enabled: false
+      value: 48.67
+    }
+  } //grid
 }
