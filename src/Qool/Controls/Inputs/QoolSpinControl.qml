@@ -71,9 +71,10 @@ BasicInputControl {
                    let aspect_of_a_step = event.angleDelta.y / 8 / 60
                    var delta = control.stepValue * aspect_of_a_step
                    if (control.decimals > 1) {
-                     if (old_value < 1)
+                     let abs_value = Math.abs(old_value)
+                     if (abs_value < 1)
                        delta = aspect_of_a_step * 0.1
-                     if (old_value >= 1)
+                     if (abs_value >= 1)
                        delta = Math.round(delta)
                    }
                    var new_value = old_value + delta

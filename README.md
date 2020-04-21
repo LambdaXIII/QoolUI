@@ -1,7 +1,17 @@
-# QmlCoolStuff
-Some Cool Stuff made with qml
-这是我边学边做的一套Qml元件库
-学习与练习目的为主
-希望大家斧正
+# QoolUI
+这是一个自用的QML元件库，
+并包含一个展示各个元件的APP。
+
+使用时，可以忽略APP直接include库的目录即可。
+
+统一使用切角矩形作为基本风格
+内置一套独立的主题切换系统
+
+## TODO
+ - 编写使用PySide2实现的后台
+ - 规范、完善的文档
+ - 其它更丰富的元件动画
+ - 基础CutCornerBox的性能优化
+
 
 开发过程的录像发表在B站

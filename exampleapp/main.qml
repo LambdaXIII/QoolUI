@@ -5,7 +5,7 @@ QoolWindow {
   visible: true
   width: 660
   height: 480
-  title: qsTr("QmlCoolStuff 测试窗口")
+  title: qsTr("QoolUI 测试窗口")
 
   Item {
     anchors.fill: hiddenBox

@@ -35,7 +35,121 @@ ExpPage {
     }
 
     QoolSpinControl {
+      id: spinControl
       title: qsTr("超级复杂的数字输入控件")
+      keepExtraZeros: spinZeroCutAc.checked
+      wheelControlEnabled: spinWheelAc.checked
+      showIndicator: spinIndicatorAc.checked
+      editable: spinEditAc.checked
+      cycleNumber: spinCycleAc.checked
+      MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        hoverEnabled: false
+        onClicked: spinMenu.popup()
+      }
+      QoolMenu {
+        id: spinMenu
+        title: qsTr("数字输入选项")
+        showTitle: true
+        QoolMenuBanner {
+          text: qsTr("使用滚轮调整大小时，\n如果数值过小，\n将会重载步进数值")
+        }
+        Action {
+          id: spinEditAc
+          checked: true
+          text: qsTr("允许键盘编辑")
+          checkable: true
+        }
+        Action {
+          id: spinCycleAc
+          checked: false
+          text: qsTr("启用循环数值")
+          checkable: true
+        }
+        Action {
+          id: spinZeroCutAc
+          checked: false
+          text: qsTr("保留末尾多余的0")
+          checkable: true
+        }
+        Action {
+          id: spinWheelAc
+          text: qsTr("启用滚轮调整数值")
+          checkable: true
+          checked: true
+        }
+        Action {
+          id: spinIndicatorAc
+          text: qsTr("显示下方范围指示器")
+          checkable: true
+          checked: true
+        }
+
+        QoolMenu {
+          title: qsTr("设置最大值")
+          Action {
+            text: "10"
+            onTriggered: spinControl.maxValue = 10
+          }
+          Action {
+            text: "200"
+            onTriggered: spinControl.maxValue = 200
+          }
+          Action {
+            text: "3000"
+            onTriggered: spinControl.maxValue = 3000
+          }
+        }
+        QoolMenu {
+          title: qsTr("设置最小值")
+          Action {
+            text: "0"
+            onTriggered: spinControl.minValue = 0
+          }
+          Action {
+            text: "50"
+            onTriggered: spinControl.minValue = 50
+          }
+          Action {
+            text: "-100"
+            onTriggered: spinControl.minValue = -100
+          }
+        }
+        QoolMenu {
+          title: qsTr("设置步进数值")
+          Action {
+            text: "1"
+            onTriggered: spinControl.stepValue = 1
+          }
+          Action {
+            text: "10"
+            onTriggered: spinControl.stepValue = 10
+          }
+          Action {
+            text: "153"
+            onTriggered: spinControl.stepValue = 153
+          }
+        }
+        QoolMenu {
+          title: qsTr("设置小数位数")
+          QoolMenuBanner {
+            text: qsTr("设置为0以处理整数")
+          }
+          Action {
+            text: "0"
+            onTriggered: spinControl.decimals = 0
+          }
+          Action {
+            text: "2"
+            onTriggered: spinControl.decimals = 0
+          }
+          Action {
+            text: "4"
+            onTriggered: spinControl.decimals = 0
+          }
+        }
+      } //menu
     }
 
     QoolSpinControl {
