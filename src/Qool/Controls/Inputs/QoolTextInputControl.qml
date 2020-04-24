@@ -11,7 +11,7 @@ BasicInputControl {
   contentItem: TextInput {
     id: mainText
     text: control.value
-
+    clip: true
     color: QoolStyle.textColor
     selectionColor: QoolStyle.infoColor
     selectedTextColor: control.backBox.backColor

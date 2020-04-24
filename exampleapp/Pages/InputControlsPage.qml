@@ -34,7 +34,7 @@ ExpPage {
       enabled: switcher.currentIndex % 2 != 0
     }
 
-    QoolSpinControl {
+    QoolSpinNumberControl {
       id: spinControl
       title: qsTr("超级复杂的数字输入控件")
       keepExtraZeros: spinZeroCutAc.checked
@@ -152,7 +152,7 @@ ExpPage {
       } //menu
     }
 
-    QoolSpinControl {
+    QoolSpinNumberControl {
       title: qsTr("被禁用的数字输入控件")
       enabled: false
       value: 48.67
@@ -236,6 +236,11 @@ ExpPage {
       enabled: false
       nameType: QoolColorControl.NAME
       value: "red"
+    }
+
+    QoolDragNumberControl {
+      title: qsTr("拖拽型数字机")
+      editable: false
     }
   } //grid
 }

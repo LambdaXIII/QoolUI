@@ -49,7 +49,8 @@ BasicInputControl {
     TextInput {
       color: QoolStyle.textColor
       selectionColor: QoolStyle.infoColor
-      selectedTextColor: QoolStyle.textColor
+      selectedTextColor: control.backBox.backColor
+      clip: true
       selectByMouse: true
       horizontalAlignment: TextInput.AlignRight
       verticalAlignment: TextInput.AlignVCenter
