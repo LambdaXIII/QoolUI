@@ -11,7 +11,7 @@ project(QoolUI)
 
 set(target_name "QoolUI")
 
-list(APPEND QML_IMPORT_PATH ${PROJECT_SOURCE_DIR})
+#list(APPEND QML_IMPORT_PATH ${PROJECT_SOURCE_DIR})
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/qoolui_cpp BASE_SRCS)
 

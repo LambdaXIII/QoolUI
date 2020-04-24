@@ -25,6 +25,7 @@ BasicInputControl {
   readonly property real valueRange: maxValue - minValue
 
   contentItem: Item {
+    z: 20
     Row {
       id: buttons
       anchors.verticalCenter: parent.verticalCenter
@@ -45,7 +46,17 @@ BasicInputControl {
         }
       }
     }
-
+    MouseArea {
+      enabled: control.wheelControlEnabled
+      acceptedButtons: Qt.NoButton
+      property bool busy: false
+      onWheel: if (!busy) {
+                 busy = true
+                 handle_wheel(event.angleDelta.y / 8)
+                 busy = false
+               }
+      z: 90
+    } //WheelHandler
     TextInput {
       color: QoolStyle.textColor
       selectionColor: QoolStyle.infoColor
@@ -62,27 +73,6 @@ BasicInputControl {
         value = core.value_checker(displayText)
         focus = false
       }
-      WheelHandler {
-        enabled: control.wheelControlEnabled
-        acceptedButtons: Qt.NoButton
-        property bool busy: false
-        onWheel: if (!busy) {
-                   busy = true
-                   let old_value = control.value
-                   let aspect_of_a_step = event.angleDelta.y / 8 / 60
-                   var delta = control.stepValue * aspect_of_a_step
-                   if (control.decimals > 1) {
-                     let abs_value = Math.abs(old_value)
-                     if (abs_value < 1)
-                       delta = aspect_of_a_step * 0.1
-                     if (abs_value >= 1)
-                       delta = Math.round(delta)
-                   }
-                   var new_value = old_value + delta
-                   control.value = core.value_checker(new_value)
-                   busy = false
-                 }
-      } //WheelHandler
     } //TextInput
 
     Item {
@@ -140,5 +130,21 @@ BasicInputControl {
         return a
       return IntFuncs.cutZero(a)
     }
+  }
+
+  //真正处理滚动的函数，需要自行添加保护机制
+  function handle_wheel(degree) {
+    let old_value = control.value
+    let aspect_of_a_step = degree / 60
+    var delta = control.stepValue * aspect_of_a_step
+    if (control.decimals > 1) {
+      let abs_value = Math.abs(old_value)
+      if (abs_value < 1)
+        delta = aspect_of_a_step * 0.1
+      if (abs_value >= 1)
+        delta = Math.round(delta)
+    }
+    var new_value = old_value + delta
+    control.value = core.value_checker(new_value)
   }
 }
