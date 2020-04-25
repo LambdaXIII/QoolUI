@@ -6,6 +6,7 @@ import Qool.Styles 1.0
 QoolControl {
   property string description
   property bool animationEnabled: true
+  property string disableInfo: qsTr("× 已锁定 ×")
   implicitHeight: 45
   implicitWidth: 200
 
@@ -24,7 +25,7 @@ QoolControl {
 
   ControlLockedCover {
     z: 90
-    text: qsTr("× 已锁定 ×")
+    text: disableInfo
     backColor: QoolStyle.negativeColor
     onVisibleChanged: {
       checkup()

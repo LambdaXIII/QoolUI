@@ -13,6 +13,10 @@ BasicInputControl {
   property real defaultValue: 1
   property real value: 1
   property real stepValue: 5 //默认的每一步步长
+  function resetValue() {
+    value = defaultValue
+  }
+  property string unit
 
   property int decimals: 2 //四舍五入小数位数
   property bool keepExtraZeros: false //保持末尾多余的0
@@ -27,7 +31,7 @@ BasicInputControl {
   contentItem: Item {
     Text {
       id: showedText
-      text: textEdit.text
+      text: textEdit.text + control.unit
       color: QoolStyle.textColor
       horizontalAlignment: TextInput.AlignRight
       verticalAlignment: TextInput.AlignVCenter

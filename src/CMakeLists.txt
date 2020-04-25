@@ -17,7 +17,7 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/qoolui_cpp BASE_SRCS)
 
 add_library(${target_name} SHARED
     ${BASE_SRCS}
-    qml_cool_stuff.qrc)
+    qool_ui_resources.qrc)
 
 target_include_directories(${target_name}
     PUBLIC ${PROJECT_SOURCE_DIR})

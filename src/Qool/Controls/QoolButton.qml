@@ -8,11 +8,14 @@ QoolAbstractButton {
   implicitHeight: contentItem.implicitHeight + topPadding + bottomPadding
   implicitWidth: contentItem.implicitWidth + leftPadding + rightPadding
 
+  property alias horizontalAlignment: mainText.horizontalAlignment
+  property alias verticalAlignment: mainText.verticalAlignment
+
   contentItem: Text {
     id: mainText
     text: control.text
     font: control.font
-//    leftPadding: backBox.showTitle ? 0 : backBox.cutSize
+    //    leftPadding: backBox.showTitle ? 0 : backBox.cutSize
     horizontalAlignment: Text.AlignHCenter
     verticalAlignment: Text.AlignVCenter
     color: enabled ? (checked ? QoolStyle.highlightColor : QoolStyle.textColor) : QoolStyle.warningColor

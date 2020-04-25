@@ -81,6 +81,10 @@ bool BasicCutCornerBox::contains(const QPointF& p) const {
 QPainterPath BasicCutCornerBox::cutCornerPath(qreal offset) const {
   QPainterPath result;
 
+  // TODO: 还要考虑此处算法，是否全部强制定到整数
+  qreal corner_offset = qRound(offset / 2);
+  qreal corner_offset_alter = qRound(offset * 2.5);
+
   if (width() - offset < m_cutSize / 2 + offset
       && height() - offset < m_cutSize / 2 + offset)
     return result; //宽高太小的话就不画啦
@@ -90,9 +94,9 @@ QPainterPath BasicCutCornerBox::cutCornerPath(qreal offset) const {
 
   if (width() < m_cutSize + offset * 1.5) //如果宽度小于切角宽度
     result.moveTo(width() - offset,
-      m_cutSize - width() + offset * 2.5); //此点代替切角顶部点
+      m_cutSize - width() + corner_offset_alter); //此点代替切角顶部点
   else
-    result.moveTo(m_cutSize + offset / 2, 0 + offset); //切角顶部点
+    result.moveTo(m_cutSize + corner_offset, 0 + offset); //切角顶部点
 
   if (width() >= m_cutSize) //只有宽度大于等于切点时才有右上角顶点
     result.lineTo(width() - offset, 0 + offset); //右上角顶点
@@ -103,10 +107,10 @@ QPainterPath BasicCutCornerBox::cutCornerPath(qreal offset) const {
     result.lineTo(0 + offset, height() - offset); //左下角顶点
 
   if (height() < m_cutSize + offset * 1.5) //如果高度小于切角宽度
-    result.lineTo(m_cutSize - height() + offset * 2.5,
+    result.lineTo(m_cutSize - height() + corner_offset_alter,
       height() - offset); //此点代替切角左侧点
   else
-    result.lineTo(0 + offset, m_cutSize + offset / 2); //切角左侧点
+    result.lineTo(0 + offset, m_cutSize + corner_offset); //切角左侧点
 
   result.closeSubpath(); //关闭路径，自动链接最后一段斜线
   return result;

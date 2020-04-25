@@ -1,7 +1,11 @@
 module Qool.Controls.Inputs
 
+BasicInputControl 1.0 BasicInputControl.qml
+BasicInputSmalllButton 1.0 BasicInputSmalllButton.qml
+
 QoolTextInputControl 1.0 QoolTextInputControl.qml
 QoolSwitchControl 1.0 QoolSwitchControl.qml
 QoolSpinNumberControl 1.0 QoolSpinNumberControl.qml
 QoolColorControl 1.0 QoolColorControl.qml
 QoolDragNumberControl 1.0 QoolDragNumberControl.qml
+QoolCheckableControl 1.0 QoolCheckableControl.qml

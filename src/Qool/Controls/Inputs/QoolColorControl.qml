@@ -17,8 +17,13 @@ BasicInputControl {
     NAME
   }
 
-  property int nameType: QoolColorControl.None
   property color value: QoolStyle.textColor
+  property color defaultValue: QoolStyle.textColor
+  function resetValue() {
+    value = defaultValue
+  }
+
+  property int nameType: QoolColorControl.None
   property bool alphaEnabled: false //开启透明度支持
   readonly property string currentText: colorist.calc_name(value)
 

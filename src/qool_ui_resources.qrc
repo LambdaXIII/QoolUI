@@ -36,5 +36,6 @@
         <file>assets/color_name_table.csv</file>
         <file>Qool/Components/Colorist.qml</file>
         <file>Qool/Controls/Inputs/QoolDragNumberControl.qml</file>
+        <file>Qool/Controls/Inputs/QoolCheckableControl.qml</file>
     </qresource>
 </RCC>

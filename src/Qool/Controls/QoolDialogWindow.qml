@@ -5,7 +5,6 @@ import Qool.Styles 1.0
 import Qool.Components 1.0
 
 Window {
-
   id: root
 
   signal accepted
@@ -34,6 +33,8 @@ Window {
   property alias hiddenBox: hiddenBox
   property alias toolBarRow: toolBarRow
 
+  property alias okButton: okButton
+  property alias cancelButton: cancelButton
   property alias hasOKButton: okButton.visible
   property alias hasCancelButton: cancelButton.visible
 

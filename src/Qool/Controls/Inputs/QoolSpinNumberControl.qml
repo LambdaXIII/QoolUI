@@ -13,6 +13,9 @@ BasicInputControl {
   property real defaultValue: minValue
   property real value: defaultValue
   property real stepValue: 5 //默认的每一步步长
+  function resetValue() {
+    value = defaultValue
+  }
 
   property int decimals: 2 //四舍五入小数位数
   property bool keepExtraZeros: false //保持末尾多余的0

@@ -16,9 +16,12 @@ class QOOL_SHARED_EXPORT BasicQoolButtonGroup: public QObject {
   QList<QObject*> m_buttonList;
   QMap<QObject*, QList<QMetaObject::Connection>> m_connections;
   QOOL_WRITABLE_PROPERTY(bool, exclusive) //是否只有一个按钮可以选中
+  Q_PROPERTY(QQuickItem* checkedButton READ checkedButton NOTIFY
+      checkedButtonChanged)
 
 public:
   explicit BasicQoolButtonGroup(QObject* parent = nullptr);
+  ~BasicQoolButtonGroup();
 
   Q_INVOKABLE void removeButton(QObject* button);
   Q_INVOKABLE void addButton(QObject* button);
@@ -26,11 +29,14 @@ public:
   static BasicQoolButtonGroupAttachedType* qmlAttachedProperties(
     QObject* object);
 
+  QQuickItem* checkedButton() const;
+
 protected:
   Q_SLOT void handleClicks();
 
 signals:
   void clicked(QObject* button);
+  void checkedButtonChanged(QQuickItem* button);
 };
 
 class QOOL_SHARED_EXPORT BasicQoolButtonGroupAttachedType

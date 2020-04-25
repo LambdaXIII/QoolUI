@@ -8,7 +8,11 @@ BasicInputControl {
 
   property var tags: []
   property int currentIndex: 0
-  property string currentValue: currentIndex < tags.length ? tags[currentIndex] : ""
+  readonly property string value: currentIndex < tags.length ? tags[currentIndex] : ""
+  property int defaultIndex: 0
+  function resetValue() {
+    currentIndex = defaultIndex
+  }
 
   contentItem: Item {
     Item {
@@ -40,7 +44,7 @@ BasicInputControl {
 
     Text {
       id: mainText
-      text: currentValue
+      text: value
       anchors.fill: parent
       leftPadding: 4
       color: QoolStyle.textColor
