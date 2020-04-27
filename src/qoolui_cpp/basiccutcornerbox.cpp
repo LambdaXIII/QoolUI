@@ -8,7 +8,7 @@ QOOL_NS_BEGIN
 
 BasicCutCornerBox::BasicCutCornerBox(QQuickItem* p)
   : QQuickPaintedItem(p)
-  , m_strokeWidth(4)
+  , m_strokeWidth(1)
   , m_cutSize(10)
   , m_backColor(Qt::black)
   , m_strokeColor(Qt::red)
@@ -20,6 +20,7 @@ BasicCutCornerBox::BasicCutCornerBox(QQuickItem* p)
     &BasicCutCornerBox::updateStrokes);
   connect(this, &BasicCutCornerBox::cutSizeInternalChanged, this,
     &BasicCutCornerBox::updateTLCorner);
+
   connect(
     this, &BasicCutCornerBox::backColorChanged, [&] { update(); });
   connect(

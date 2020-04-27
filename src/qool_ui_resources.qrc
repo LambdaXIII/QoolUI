@@ -37,5 +37,8 @@
         <file>Qool/Components/Colorist.qml</file>
         <file>Qool/Controls/Inputs/QoolDragNumberControl.qml</file>
         <file>Qool/Controls/Inputs/QoolCheckableControl.qml</file>
+        <file>Qool/Controls/QoolPopup.qml</file>
+        <file>Qool/Controls/QoolTabButton.qml</file>
+        <file>Qool/Controls/QoolTabBar.qml</file>
     </qresource>
 </RCC>
