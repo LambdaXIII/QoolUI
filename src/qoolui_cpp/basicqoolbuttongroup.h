@@ -55,6 +55,7 @@ protected:
 
 QOOL_NS_END
 
+QML_DECLARE_TYPE(QoolUI::BasicQoolButtonGroup)
 QML_DECLARE_TYPEINFO(
   QoolUI::BasicQoolButtonGroup, QML_HAS_ATTACHED_PROPERTIES)
 
