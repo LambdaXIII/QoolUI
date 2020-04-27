@@ -21,14 +21,35 @@ ExpPage {
     hasCancelButton: cancelSwitch.checked
     showToolBar: barSwitch.checked
     resizable: resizeSwitch.checked
+    showTitle: dialogTitleSwitch.checked
     QoolDialogButton {
-      text: qsTr("自行添加的按钮")
+      text: qsTr("另一个自定按钮")
       parent: dialog.toolBarRow
+      highlightColor: "purple"
+    }
+    QoolDialogButton {
+      text: qsTr("切换边距")
+      parent: dialog.toolBarRow
+      onClicked: {
+        let x = dialog.spacing
+        if (x === 6)
+          dialog.spacing = 12
+        else if (x === 12)
+          dialog.spacing = 24
+        else
+          dialog.spacing = 6
+      }
     }
     Column {
       anchors.centerIn: dialog.hiddenBox
       spacing: 6
-
+      QoolRadioButton {
+        id: dialogTitleSwitch
+        text: qsTr("对话框标题开关")
+        checked: true
+        width: 200
+        height: 25
+      }
       QoolRadioButton {
         id: okSwitch
         text: qsTr("显示OK按钮")
@@ -57,21 +78,29 @@ ExpPage {
         width: 200
         height: 25
       }
-    }
+      QoolRadioButton {
+        id: showRBoxSwitch
+        text: qsTr("切换布局指示器显示")
+        width: 200
+        height: 25
+      }
+    } //column
 
     Rectangle {
       id: mainRangeBox
       color: "black"
       anchors.fill: dialog.hiddenBox
-      opacity: 0.3
+      opacity: 0.4
       radius: 5
       z: -20
+      visible: showRBoxSwitch.checked
     }
 
     Text {
+      visible: mainRangeBox.visible
       x: mainRangeBox.x + 5
       y: mainRangeBox.y + 5
-      text: qsTr("这个深色块块是布局的主要区域")
+      text: qsTr("这个深色块块是布局的主要区域\n可以随着自带控件自动调整\n自行添加的内容直接填充就行啦")
       color: "white"
       font.pixelSize: 10
       opacity: 0.8

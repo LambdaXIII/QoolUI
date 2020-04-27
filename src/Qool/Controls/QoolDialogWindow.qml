@@ -33,6 +33,7 @@ Window {
   property alias hiddenBox: hiddenBox
   property alias toolBarRow: toolBarRow
 
+  property alias showTitle: backgroundBox.showTitle
   property alias okButton: okButton
   property alias cancelButton: cancelButton
   property alias hasOKButton: okButton.visible
