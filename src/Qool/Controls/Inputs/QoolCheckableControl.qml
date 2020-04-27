@@ -19,7 +19,7 @@ BasicInputControl {
     text: control.text
     font: control.font
     color: QoolStyle.textColor
-    horizontalAlignment: Text.AlignHCenter
+    horizontalAlignment: Text.AlignRight
     verticalAlignment: Text.AlignVCenter
     SmallIndicator {
       id: checkIndicator

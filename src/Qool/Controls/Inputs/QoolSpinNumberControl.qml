@@ -49,7 +49,7 @@ BasicInputControl {
         }
       }
     }
-    MouseArea {
+    WheelHandler {
       enabled: control.wheelControlEnabled
       acceptedButtons: Qt.NoButton
       property bool busy: false
@@ -58,7 +58,7 @@ BasicInputControl {
                  handle_wheel(event.angleDelta.y / 8)
                  busy = false
                }
-      z: 90
+      //      z: 90
     } //WheelHandler
     TextInput {
       color: QoolStyle.textColor

@@ -242,5 +242,24 @@ ExpPage {
       title: qsTr("拖拽型数字机")
       editable: false
     }
+    QoolDragNumberControl {
+      title: qsTr("被禁用的拖拽型数字机")
+      enabled: false
+      value: 56.321234
+      decimals: 4
+    }
+
+    QoolCheckableControl {
+      title: qsTr("逻辑型控件")
+      checked: true
+      text: checked ? qsTr("左边的开关显示状态") : qsTr("哎呀，快把我打开！")
+    }
+    QoolCheckableControl {
+      title: qsTr("被禁用的逻辑型控件")
+      text: qsTr("没有人可以拒绝我")
+      checked: true
+      disableInfo: qsTr(" - 不让改 - ")
+      enabled: false
+    }
   } //grid
 }
