@@ -20,4 +20,4 @@ QoolMenu 1.0 QoolMenu.qml
 QoolMenuSeparator 1.0 QoolMenuSeparator.qml
 QoolMenuBanner 1.0 QoolMenuBanner.qml
 
-QoolButtonGroup 1.0 QoolButtonGroup.qml
+singleton QoolButtonGroupManager 1.0 QoolButtonGroupManager.qml

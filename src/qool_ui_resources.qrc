@@ -22,7 +22,6 @@
         <file>Qool/Controls/QoolMenuSeparator.qml</file>
         <file>Qool/Controls/QoolMenuBanner.qml</file>
         <file>Qool/Controls/QoolTextField.qml</file>
-        <file>Qool/Controls/QoolButtonGroup.qml</file>
         <file>Qool/Controls/QoolDialogWindow.qml</file>
         <file>Qool/Controls/QoolDialogButton.qml</file>
         <file>Qool/Controls/Inputs/BasicInputControl.qml</file>
@@ -40,5 +39,6 @@
         <file>Qool/Controls/QoolPopup.qml</file>
         <file>Qool/Controls/QoolTabButton.qml</file>
         <file>Qool/Controls/QoolTabBar.qml</file>
+        <file>Qool/Controls/QoolButtonGroupManager.qml</file>
     </qresource>
 </RCC>

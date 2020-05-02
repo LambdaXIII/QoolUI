@@ -50,4 +50,6 @@ QtObject {
   property real controlImportantTextSize: 35
   property real tooltipTextFontPixelSize: 10
   property real dialogTitleFontPixelSize: controlTitleFontPixelSize
+
+  function good(){console.log("good")}
 }

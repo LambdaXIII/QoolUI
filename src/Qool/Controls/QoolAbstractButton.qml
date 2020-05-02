@@ -19,6 +19,7 @@ Control {
   property alias titleText: backBox.titleText
   property real extraContentPadding: 0
   property color highlightColor: QoolStyle.highlightColor
+  property string groupName
 
   signal clicked
 
@@ -102,4 +103,6 @@ Control {
       checked = !checked
     }
   }
+
+  onCheckedChanged: QoolButtonGroupManager.switched_from_group(this, groupName)
 }
