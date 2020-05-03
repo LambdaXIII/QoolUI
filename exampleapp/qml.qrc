@@ -14,5 +14,6 @@
         <file>Pages/MenuPage.qml</file>
         <file>Pages/DialogPage.qml</file>
         <file>Pages/InputControlsPage.qml</file>
+        <file>Pages/QoolButtonsPage_2.qml</file>
     </qresource>
 </RCC>

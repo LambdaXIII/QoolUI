@@ -10,6 +10,10 @@
     <page>QoolButtonsPage.qml</page>
 </item>
 <item>
+    <title>按钮分组</title>
+    <page>QoolButtonsPage_2.qml</page>
+</item>
+<item>
     <title>切角图框</title>
     <page>CutCornerBoxPage.qml</page>
 </item>

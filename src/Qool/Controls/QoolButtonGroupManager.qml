@@ -7,6 +7,9 @@ QtObject {
   property var dataObj: Object()
 
   function switched_from_group(button, group_name) {
+    if (group_name === "")
+      return
+
     if (button.checked) {
       if (dataObj.hasOwnProperty(group_name)) {
         dataObj[group_name].checked = false
@@ -17,6 +20,4 @@ QtObject {
         delete dataObj[group_name]
     }
   }
-
-
 }
