@@ -55,7 +55,7 @@ QString BasicColorist::name(const QColor& color, bool withAlpha) {
 QMap<QString, QString>& BasicColorist::nameMap() {
   m_nameMap_lock.lock();
   if (! m_nameMap) {
-    QFile table(":/assets/color_name_table.csv");
+    QFile table(":/Qool/assets/color_name_table.csv");
     if (! table.open(QFile::ReadOnly))
       throw std::invalid_argument(
         QT_TR_NOOP("色彩表不见了，肯定是你Port出了问题"));
