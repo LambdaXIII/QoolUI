@@ -21,3 +21,6 @@ QoolMenuSeparator 1.0 QoolMenuSeparator.qml
 QoolMenuBanner 1.0 QoolMenuBanner.qml
 
 singleton QoolButtonGroupManager 1.0 QoolButtonGroupManager.qml
+
+singleton QoolToolTipWindow 1.0 QoolToolTipWindow.qml
+QoolToolTip 1.0 QoolToolTip.qml

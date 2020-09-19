@@ -22,6 +22,8 @@ Control {
   property string groupName
 
   signal clicked
+  signal entered
+  signal exited
 
   background: CutCornerControlBack {
     id: backBox
@@ -87,10 +89,11 @@ Control {
       if (backBox.contains(Qt.point(mouseX, mouseY)))
         control.clicked()
     }
-    property bool mouseOvered: false
-    onEntered: mouseOvered = true
-    onExited: mouseOvered = false
-    z: 31
+    property bool mouseOvered: containsMouse
+
+    onEntered: control.entered()
+    onExited: control.exited()
+    z: 50
   }
 
   CutCornerHighlightCover {

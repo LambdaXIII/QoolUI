@@ -5,29 +5,32 @@
         <page>FrontPage.qml</page>
     </item>
 
-<item>
-    <title>普通文本按钮</title>
-    <page>QoolButtonsPage.qml</page>
-</item>
-<item>
-    <title>按钮分组</title>
-    <page>QoolButtonsPage_2.qml</page>
-</item>
-<item>
-    <title>切角图框</title>
-    <page>CutCornerBoxPage.qml</page>
-</item>
-<item>
-    <title>菜单效果</title>
-    <page>MenuPage.qml</page>
-</item>
-<item>
-    <title>对话框</title>
-    <page>DialogPage.qml</page>
-</item>
-<item>
-    <title>输入控件</title>
-    <page>InputControlsPage.qml</page>
-</item>
-
+    <item>
+        <title>普通文本按钮</title>
+        <page>QoolButtonsPage.qml</page>
+    </item>
+    <item>
+        <title>按钮分组</title>
+        <page>QoolButtonsPage_2.qml</page>
+    </item>
+    <item>
+        <title>切角图框</title>
+        <page>CutCornerBoxPage.qml</page>
+    </item>
+    <item>
+        <title>菜单效果</title>
+        <page>MenuPage.qml</page>
+    </item>
+    <item>
+        <title>对话框</title>
+        <page>DialogPage.qml</page>
+    </item>
+    <item>
+        <title>输入控件</title>
+        <page>InputControlsPage.qml</page>
+    </item>
+    <item>
+        <title>工具提示</title>
+        <page>TooltipPage.qml</page>
+    </item>
 </qool_pages>

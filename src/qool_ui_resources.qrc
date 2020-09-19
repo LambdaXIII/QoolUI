@@ -40,5 +40,7 @@
         <file>Qool/Controls/QoolTabButton.qml</file>
         <file>Qool/Controls/QoolTabBar.qml</file>
         <file>Qool/Controls/QoolButtonGroupManager.qml</file>
+        <file>Qool/Controls/QoolToolTipWindow.qml</file>
+        <file>Qool/Controls/QoolToolTip.qml</file>
     </qresource>
 </RCC>
