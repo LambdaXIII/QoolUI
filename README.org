@@ -40,43 +40,164 @@ QoolUI 目前分成了几个包，使用地时候请注意自己导入
 这里面是一些控件用到的数据文件
 
 - color_name_table.csv
-
   这是颜色选择器的颜色名数据表。需要它才能显示颜色的名称。
 
 ** Qool.Components
 这里面是基本的一些控件的基本组件。都是功能单一高度抽象的东西。
 
-- Colorist.qml
-
+*** Colorist.qml
   这个没什么大用，是 C++ 版本 Colorist 的 QML 重新包装。包装的主要目的是为了以后 Python 兼容性。
 
-- ControlLockedCover.qml
-
+*** ControlLockedCover.qml
   这个是所有控件锁定状态叠层的预置。
 
-- CutCornerBox.qml
-
+*** CutCornerBox.qml
   这个是 QoolUI 的核心，缺角矩形的 QML 包装。
   后台实际上仍然是 C++ 实现的。包装一下的目的是为了以后方便支持 Python 实现。
 
-- CutCornerControlBack.qml
-
+*** CutCornerControlBack.qml
   这个是缺角矩形的控件背景包装，基于 CutCornerBox。
 
   基本属性包括：
 
-  - alterBackgroundColor
-
+- alterBackgroundColor
     如果有多重控件嵌套的话，背景颜色不好看，这个开关可以切换背景是否切换为另一种预置方案。
 
-  - title
-
+- title
     控件的标题文本。控件背景会自动在右上角渲染一个标题文本。
 
-  - showTitle
-
+- showTitle
     是否渲染标题文本。此选项和切角宽度共同决定内部填充框的范围。
 
-  - titleText
-
+- titleText
     标题文本的实体 alias。这个导出只是为了方便子类进行魔改。
+
+*** CutCornerHighlightCover.qml
+  这个东西是按钮等空间被点击时，产生的高亮填充叠层。
+  其内置一个随机选择提示字的机制。默认是「啪啪啪」
+
+*** DragMoveArea.qml
+这个东西是一个预设的 MouseArea。
+其作用就是鼠标拖动的时候产生一个拖动信号，可以直接作用于父对象并进行位移。
+
+异形窗口通过它实现了拖动移动。
+
+*** SmallIndicator.qml
+这个是 QoolUI 特色的小型标签叠层的基类。
+
+*** WindowCloseButton.qml
+这个是窗口左上角的关闭三角的 QML 包装。
+后台使用 C++实现。B站视频有详解。
+
+** Qool.Controls
+
+这里面是大部分的控件啦。
+
+*** QoolAbstractButton.qml
+这个是一个隐藏的控件，是所有的按钮的基类。
+
+*** QoolButton.qml
+这是基本的按钮。
+
+*** QoolButtonGroupManager.qml
+这是一个单例。
+
+是用来控制 QoolUI 按钮编组系统的。
+
+QoolUI 的按钮不能使用 QML 自带的按钮组系统。
+
+*** QoolControl.qml
+这是所有控件的基类。
+和 QML 自带的 Control 很类似，只是加上了 QoolUI 的风格化包装。
+
+*** QoolDialogButton.qml
+一种适用于对话框的小型按钮。
+
+*** QoolDialogWindow.qml
+QoolUI 自行实现的对话框窗口。
+功能很多很方便使用，具体请参考示例程序中的展示。
+
+*** QoolMenu.qml
+QoolUI 魔改的 Menu。
+用法和 QML 自带的一致，直接包装 Action 就行了。
+
+但是还可以添加下面的 QoolUI 菜单控件。
+
+*** QoolMenuBanner.qml
+一种菜单分隔线，但是其中可以显示文本信息。
+
+*** QoolMenuBar.qml
+QoolUI 实现的菜单栏。其中需要使用 QoolMenu。
+
+*** QoolMenuItem.qml
+QoolMenu 的物件。一般用不到，直接使用 Action 即可。
+
+*** QoolMenuSeparator.qml
+QoolUI 版本的菜单分隔线。使用时请注意拼写正确。
+
+*** QoolPopup.qml
+目前没有任何用处。
+
+*** QoolRadioButton.qml
+带有一个小灯表示标记状态的按钮。
+建议和按钮组搭配使用。
+
+*** QoolTabBar.qml
+一个风格化的 Tabbar。
+
+*** QoolTabButton.qml
+和 Tabbar 配套使用的按钮。
+
+*** QoolTextField.qml
+QoolUI 实现的文本框。
+
+这个是单行的，提前设置好了一些常用属性。默认回车结束输入。
+
+*** QoolToolTip.qml
+工具提示。
+
+这个与 QML 自带的完全不同。完全独立实现的。功能更丰富。
+
+*** QoolToolTipWindow.qml
+工具提示窗口的单例。
+主要通过 QoolToolTip 操作，无须调用。
+
+*** QoolWindow.qml
+缺角矩形窗口。可以当做程序主窗口使用。
+
+** Qool.Controls.Inputs
+一套输入控件子集。
+
+*** BasicInputControl.qml
+所有输入控件的基类。
+
+*** BasicInputSmallButton.qml
+输入控件上使用的小型按钮的基类。
+
+*** internal_functions.js
+一些公用的脚本。
+
+*** QoolCheckableControl.qml
+一个简单的开关控件
+
+*** QoolColorControl.qml
+一个颜色选择器。
+
+将会打开系统自带的颜色选择器。颜色切换动态显示。可以显示颜色代码，各种色彩控件的数值或颜色名称。
+
+*** QoolDragNumberControl.qml
+一个输入数字的滑块
+
+*** QoolSpinNumberControl.qml
+一个输入数字的控件
+
+*** QoolSwitchControl.qml
+一种单选控件，可以切换多个选项。
+
+*** QoolTextInputControl.qml
+一个单行文本输入框。
+
+** Qool.Styles
+里面是自带的颜色主题信息。
+
+所有的控件的色彩风格都引用于此。
