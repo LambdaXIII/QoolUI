@@ -16,5 +16,6 @@
         <file>Pages/InputControlsPage.qml</file>
         <file>Pages/QoolButtonsPage_2.qml</file>
         <file>Pages/TooltipPage.qml</file>
+        <file>Pages/DecorationControlsPage.qml</file>
     </qresource>
 </RCC>

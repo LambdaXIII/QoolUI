@@ -10,7 +10,8 @@ AbstractButton {
   contentItem: Text {
     text: control.text
     font: control.font
-    color: down ? QoolStyle.backgroundColor : QoolStyle.backgroundStrokeColor
+    color: down ? QoolStyle.backgroundColor : (checkable
+                                               && checked) ? QoolStyle.highlightColor : QoolStyle.backgroundStrokeColor
     Behavior on color {
       enabled: control.animationEnabled
       ColorAnimation {

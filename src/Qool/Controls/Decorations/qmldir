@@ -1,0 +1,3 @@
+module Qool.Controls.Decorations
+
+QoolScrollBanner 1.0 QoolScrollBanner.qml

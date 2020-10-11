@@ -42,5 +42,7 @@
         <file>Qool/Controls/QoolButtonGroupManager.qml</file>
         <file>Qool/Controls/QoolToolTipWindow.qml</file>
         <file>Qool/Controls/QoolToolTip.qml</file>
+        <file>Qool/Controls/Decorations/QoolScrollBanner.qml</file>
+        <file>Qool/Controls/Decorations/qmldir</file>
     </qresource>
 </RCC>

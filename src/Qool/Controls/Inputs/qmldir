@@ -1,7 +1,7 @@
 module Qool.Controls.Inputs
 
 BasicInputControl 1.0 BasicInputControl.qml
-BasicInputSmalllButton 1.0 BasicInputSmalllButton.qml
+BasicInputSmallButton 1.0 BasicInputSmallButton.qml
 
 QoolTextInputControl 1.0 QoolTextInputControl.qml
 QoolSwitchControl 1.0 QoolSwitchControl.qml

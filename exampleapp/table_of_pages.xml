@@ -33,4 +33,8 @@
         <title>工具提示</title>
         <page>TooltipPage.qml</page>
     </item>
+    <item>
+        <title>装饰控件</title>
+        <page>DecorationControlsPage.qml</page>
+    </item>
 </qool_pages>
