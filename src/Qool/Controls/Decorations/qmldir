@@ -1,3 +1,4 @@
 module Qool.Controls.Decorations
 
-QoolScrollBanner 1.0 QoolScrollBanner.qml
+QoolHorizontalScrollText 1.0 QoolHorizontalScrollText.qml
+QoolCharScrollText 1.0 QoolCharScrollText.qml

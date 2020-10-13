@@ -40,7 +40,7 @@ ExpPage {
       leftPadding: 5
       rightPadding: 5
       title: qsTr("循环型滚动文本")
-      contentItem: QoolScrollBanner {
+      contentItem: QoolHorizontalScrollText {
         enableMovements: props.running
         speed: props.speed
         color: props.color
@@ -49,6 +49,23 @@ ExpPage {
         text: qsTr("此为循环型滚动文本，只在宽度不够时开始滚动。速度和刷新时间可以自行设置。")
       } //contentItem:
     } // Scroller 1
+
+    QoolControl {
+      id: scroller2
+      height: 35
+      width: props.width
+      anchors.right: parent.right
+      backBox.backColor: "#2b2b2b"
+      leftPadding: 5
+      rightPadding: 5
+      title: qsTr("循环型滚动文本")
+      contentItem: QoolCharScrollText {
+        enableMovements: props.running
+        color: props.color
+        updateInterval: props.interval
+        text: qsTr("此为单字符滚动文本，每次刷新一个字符。空格需要自行添加          ")
+      } //contentItem:
+    } // Scroller 2
 
     QoolControl {
       id: controller
