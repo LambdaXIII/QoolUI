@@ -2,3 +2,4 @@ module Qool.Controls.Decorations
 
 QoolHorizontalScrollText 1.0 QoolHorizontalScrollText.qml
 QoolCharScrollText 1.0 QoolCharScrollText.qml
+QoolWiggleScrollText 1.0 QoolWiggleScrollText.qml

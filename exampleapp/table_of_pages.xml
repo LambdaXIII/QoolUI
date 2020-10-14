@@ -34,7 +34,7 @@
         <page>TooltipPage.qml</page>
     </item>
     <item>
-        <title>装饰控件</title>
-        <page>DecorationControlsPage.qml</page>
+        <title>滚动文本控件</title>
+        <page>ScrollTextPage.qml</page>
     </item>
 </qool_pages>

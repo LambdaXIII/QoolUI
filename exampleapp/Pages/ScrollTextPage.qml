@@ -7,7 +7,7 @@ import Qool.Styles 1.0
 import QtQuick.Layouts 1.15
 
 ExpPage {
-  pageTitle: qsTr("QoolUI 一些装饰性控件展示")
+  pageTitle: qsTr("QoolUI 滚动文本控件展示")
 
   QtObject {
     id: props
@@ -68,6 +68,24 @@ ExpPage {
     } // Scroller 2
 
     QoolControl {
+      id: scroller3
+      height: 35
+      width: props.width
+      anchors.right: parent.right
+      backBox.backColor: "#2b2b2b"
+      leftPadding: 5
+      rightPadding: 5
+      title: qsTr("循环型滚动文本")
+      contentItem: QoolWiggleScrollText {
+        enableMovements: props.running
+        speed: props.speed
+        color: props.color
+        updateInterval: props.interval
+        text: qsTr("来回滚动文本。")
+      } //contentItem:
+    } // Scroller 3
+
+    QoolControl {
       id: controller
       title: qsTr("属性控制器")
       width: 320
@@ -117,6 +135,7 @@ ExpPage {
           property real sp: 40
           text: sp + "ms"
           checkable: true
+          checked: true
           ButtonGroup.group: intervalGroup
           onClicked: props.interval = sp
           QoolToolTip {
