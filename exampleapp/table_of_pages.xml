@@ -37,4 +37,8 @@
         <title>滚动文本控件</title>
         <page>ScrollTextPage.qml</page>
     </item>
+    <item>
+        <title>圆角矩形</title>
+        <page>RoundCornerBoxPage.qml</page>
+    </item>
 </qool_pages>

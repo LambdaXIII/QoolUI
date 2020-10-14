@@ -8,3 +8,5 @@ DragMoveArea 1.0 DragMoveArea.qml
 SmallIndicator 1.0 SmallIndicator.qml
 ControlLockedCover 1.0 ControlLockedCover.qml
 Colorist 1.0 Colorist.qml
+
+RoundCornerBox 1.0 RoundCornerBox.qml

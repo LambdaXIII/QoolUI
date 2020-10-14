@@ -46,5 +46,6 @@
         <file>Qool/Controls/Decorations/qmldir</file>
         <file>Qool/Controls/Decorations/QoolCharScrollText.qml</file>
         <file>Qool/Controls/Decorations/QoolWiggleScrollText.qml</file>
+        <file>Qool/Components/RoundCornerBox.qml</file>
     </qresource>
 </RCC>

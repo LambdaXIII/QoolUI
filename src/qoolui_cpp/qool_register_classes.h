@@ -3,6 +3,7 @@
 
 #include "basiccolorist.h"
 #include "basiccutcornerbox.h"
+#include "basicroundcornerbox.h"
 #include "basicwindowclosebutton.h"
 
 #include <QQmlEngine>
@@ -12,6 +13,8 @@ void qool_register_classes() {
 
   qmlRegisterType<QoolUI::BasicCutCornerBox>(
     QOOL_ERI, "BasicCutCornerBox");
+  qmlRegisterType<QoolUI::BasicRoundCornerBox>(
+    QOOL_ERI, "BasicRoundCornerBox");
   qmlRegisterType<QoolUI::BasicWindowCloseButton>(
     QOOL_ERI, "BasicWindowCloseButton");
 
