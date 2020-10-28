@@ -50,3 +50,5 @@ CMakeLists.txt.user*
 
 .idea/
 /build/
+cmake-build-debug/
+.ccls-cache/

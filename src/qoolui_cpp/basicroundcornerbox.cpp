@@ -114,6 +114,8 @@ QPainterPath BasicRoundCornerBox::roundCornerPath(qreal offset) const {
   QPainterPath result;
 
   //逆时针一笔画成
+
+  /* 旧算法
   result.moveTo(t1 + offset, 0 + offset);
   result.arcTo(
     0 + offset, 0 + offset, t1 * 2 - offset, t1 * 2 - offset, 90, 90);
@@ -126,6 +128,34 @@ QPainterPath BasicRoundCornerBox::roundCornerPath(qreal offset) const {
   result.lineTo(width() - offset, t2 + offset);
   result.arcTo(width() - t2 * 2, 0 + offset, t2 * 2 - offset,
     t2 * 2 - offset, 0, 90);
+  result.closeSubpath();
+  */
+
+  if (offset < t1) {
+    result.moveTo(t1, 0 + offset);
+    result.quadTo(offset, offset, offset, t1);
+  } else
+    result.moveTo(offset, offset);
+
+  if (offset < b1) {
+    result.lineTo(0 + offset, height() - b1);
+    result.quadTo(offset, height() - offset, b1, height() - offset);
+  } else
+    result.lineTo(offset, height() - offset);
+
+  if (offset < b2) {
+    result.lineTo(width() - b2, height() - offset);
+    result.quadTo(width() - offset, height() - offset, width() - offset,
+      height() - b2);
+  } else
+    result.lineTo(width() - offset, height() - offset);
+
+  if (offset < t2) {
+    result.lineTo(width() - offset, t2);
+    result.quadTo(width() - offset, offset, width() - t2, offset);
+  } else
+    result.lineTo(width() - offset, offset);
+
   result.closeSubpath();
 
   return result;
