@@ -3,6 +3,7 @@
 
 #include "basiccolorist.h"
 #include "basiccutcornerbox.h"
+#include "basicdigitalnumber.h"
 #include "basicroundcornerbox.h"
 #include "basicwindowclosebutton.h"
 
@@ -19,6 +20,9 @@ void qool_register_classes() {
     QOOL_ERI, "BasicWindowCloseButton");
 
   qmlRegisterType<QoolUI::BasicColorist>(QOOL_ERI, "BasicColorist");
+
+  qmlRegisterType<QoolUI::BasicDigitalNumber>(
+    QOOL_ERI, "BasicDigitalNumber");
 
 #undef QOOL_ERI
 }

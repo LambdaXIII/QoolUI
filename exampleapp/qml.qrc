@@ -20,5 +20,6 @@
         <file>Pages/RoundCornerBoxPage.qml</file>
         <file>Pages/ExtraControls/ClickBar.qml</file>
         <file>Pages/ExtraControls/ClickButton.qml</file>
+        <file>Pages/DigitalNumberPage.qml</file>
     </qresource>
 </RCC>

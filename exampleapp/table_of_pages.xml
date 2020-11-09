@@ -41,4 +41,8 @@
         <title>圆角矩形</title>
         <page>RoundCornerBoxPage.qml</page>
     </item>
+    <item>
+        <title>数码数字</title>
+        <page>DigitalNumberPage.qml</page>
+    </item>
 </qool_pages>

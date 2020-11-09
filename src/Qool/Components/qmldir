@@ -10,3 +10,5 @@ ControlLockedCover 1.0 ControlLockedCover.qml
 Colorist 1.0 Colorist.qml
 
 RoundCornerBox 1.0 RoundCornerBox.qml
+
+DigitalNumber 1.0 DigitalNumber.qml
