@@ -1,6 +1,7 @@
 #include "basicdigitalnumber.h"
 
 #include <QDebug>
+#include <QtMath>
 
 QOOL_NS_BEGIN
 BasicDigitalNumber::BasicDigitalNumber(QQuickItem* p)
@@ -27,8 +28,17 @@ void BasicDigitalNumber::paint(QPainter* painter) {
     painter->fillPath(path, QBrush(m_partColor));
 }
 
-QPainterPath BasicDigitalNumber::partBoxPath(qreal x, qreal y, qreal w,
-  qreal h, qreal shrink, bool vertical) const {
+/*!
+ * \brief BasicDigitalNumber::partBoxPath
+ * 外框横竖线图形生成
+ * \param w
+ * \param h
+ * \param shrink
+ * \param vertical
+ * \return
+ */
+QPainterPath BasicDigitalNumber::partBoxPath(
+  qreal w, qreal h, qreal shrink, bool vertical) const {
   QPainterPath result;
 
   if (vertical) {
@@ -52,19 +62,102 @@ QPainterPath BasicDigitalNumber::partBoxPath(qreal x, qreal y, qreal w,
   }
 
   result.closeSubpath();
-  result.translate(x, y);
   return result;
 }
 
+/*!
+ * \brief BasicDigitalNumber::partInnerBoxPath
+ * 内部斜线图形生成
+ * \param w
+ * \param h
+ * \param shrink
+ * \param lowerRight
+ * \return
+ */
+QPainterPath BasicDigitalNumber::partInnerBoxPath(
+  qreal w, qreal h, qreal shrink, bool lowerRight) const {
+  QPainterPath result;
+  qreal ddd = qSqrt(m_partWidth * m_partWidth / 2);
+
+  QList<QPointF> pts;
+  if (lowerRight) {
+    pts = { { 0 + shrink, 0 + shrink }, { ddd, 0 + shrink },
+      { w - shrink, h - ddd }, { w - shrink, h - shrink },
+      { w - ddd, h - shrink }, { 0 + shrink, ddd } };
+  } else {
+    pts = { { 0 + shrink, h - ddd }, { w - ddd, 0 + shrink },
+      { w - shrink, 0 + shrink }, { w - shrink, ddd },
+      { ddd, h - shrink }, { 0 + shrink, h - shrink } };
+  }
+  result.moveTo(pts.takeFirst());
+  for (const auto& p : pts)
+    result.lineTo(p);
+  result.closeSubpath();
+  return result;
+}
+
+/*!
+ * \brief BasicDigitalNumber::partTrianglePath
+ * 绘制边角的三角形，直角顶点永远位于原点
+ * \param direction
+ * \return
+ */
+QPainterPath BasicDigitalNumber::partTrianglePath(
+  qreal shrink, BasicDigitalNumber::TriDirection direction) const {
+  auto half_w = m_partWidth / 2;
+
+  QList<QPointF> pts;
+  if (direction == Up) {
+    pts = { { 0, 0 - shrink },
+      { 0 - half_w + shrink, 0 - half_w + shrink },
+      { half_w - shrink, 0 - half_w + shrink } };
+  } else if (direction == Down) {
+    pts = { { 0, 0 + shrink }, { 0 - half_w + shrink, half_w - shrink },
+      { half_w - shrink, half_w - shrink } };
+  } else if (direction == Left) {
+    pts = { { 0 - shrink, 0 },
+      { 0 - half_w + shrink, 0 - half_w + shrink },
+      { 0 - half_w + shrink, half_w - shrink } };
+  } else {
+    pts = { { 0 + shrink, 0 }, { half_w - shrink, 0 - half_w + shrink },
+      { half_w - shrink, half_w - shrink } };
+  }
+
+  QPainterPath result;
+  result.moveTo(pts.takeFirst());
+  for (const auto& p : pts)
+    result.lineTo(p);
+  result.closeSubpath();
+  return result;
+}
+
+/*!
+ * \brief BasicDigitalNumber::forgePartPaths
+ * 根据字符组合路径
+ * \param parts
+ * \return
+ */
 QList<QPainterPath> BasicDigitalNumber::forgePartPaths(
   QStringList& parts) const {
   QList<QPainterPath> result;
   auto half_w = m_partWidth / 2;
 
-  auto _big_horizontal_part = partBoxPath(
-    0, 0, width() - m_partWidth, m_partWidth, m_partShrinkWidth);
+  //横竖的大型部件
+  auto _big_horizontal_part =
+    partBoxPath(width() - m_partWidth, m_partWidth, m_partShrinkWidth);
   auto _big_vertical_part = partBoxPath(
-    0, 0, m_partWidth, height() / 2 - half_w, m_partShrinkWidth, true);
+    m_partWidth, height() / 2 - half_w, m_partShrinkWidth, true);
+
+  //两个角度的小型部件
+  qreal inner_height = (height() - m_partWidth * 3) / 4;
+  qreal inner_width = (width() - m_partWidth * 2) / 2;
+  auto _inner_part_lowerRight =
+    partInnerBoxPath(inner_width, inner_height, m_partShrinkWidth);
+  auto _inner_part_higherRight = partInnerBoxPath(
+    inner_width, inner_height, m_partShrinkWidth, false);
+
+  //下面小型部件的竖直位移
+  auto bottom_inner_delta_y = inner_height * 2 + m_partWidth;
 
   for (const auto& part_name : parts) {
     if (part_name == "TOP")
@@ -92,6 +185,67 @@ QList<QPainterPath> BasicDigitalNumber::forgePartPaths(
       result << _big_vertical_part.translated(
         width() - m_partWidth, height() / 2);
 
+    //内部部件
+    if (part_name == "INNER_TTL")
+      result << _inner_part_lowerRight.translated(
+        m_partWidth, m_partWidth);
+
+    if (part_name == "INNER_TTR")
+      result << _inner_part_higherRight.translated(
+        width() / 2, m_partWidth);
+
+    if (part_name == "INNER_TBL")
+      result << _inner_part_higherRight.translated(
+        m_partWidth, m_partWidth + inner_height);
+
+    if (part_name == "INNER_TBR")
+      result << _inner_part_lowerRight.translated(
+        width() / 2, m_partWidth + inner_height);
+
+    if (part_name == "INNER_BTL")
+      result << _inner_part_lowerRight.translated(
+        m_partWidth, m_partWidth + bottom_inner_delta_y);
+
+    if (part_name == "INNER_BTR")
+      result << _inner_part_higherRight.translated(
+        width() / 2, m_partWidth + bottom_inner_delta_y);
+
+    if (part_name == "INNER_BBL")
+      result << _inner_part_higherRight.translated(
+        m_partWidth, m_partWidth + inner_height + bottom_inner_delta_y);
+
+    if (part_name == "INNER_BBR")
+      result << _inner_part_lowerRight.translated(
+        width() / 2, m_partWidth + inner_height + bottom_inner_delta_y);
+
+      //判断三角形
+#define __TRI__(x, y, z)                                               \
+  partTrianglePath(m_partShrinkWidth, x).translated(y, z)
+    if (part_name == "TRI_LT")
+      result << __TRI__(Left, half_w, half_w);
+    if (part_name == "TRI_LC")
+      result << __TRI__(Left, half_w, height() / 2);
+    if (part_name == "TRI_LB")
+      result << __TRI__(Left, half_w, height() - half_w);
+
+    if (part_name == "TRI_RT")
+      result << __TRI__(Right, width() - half_w, half_w);
+    if (part_name == "TRI_RC")
+      result << __TRI__(Right, width() - half_w, height() / 2);
+    if (part_name == "TRI_RB")
+      result << __TRI__(Right, width() - half_w, height() - half_w);
+
+    if (part_name == "TRI_TL")
+      result << __TRI__(Up, half_w, half_w);
+    if (part_name == "TRI_TR")
+      result << __TRI__(Up, width() - half_w, half_w);
+
+    if (part_name == "TRI_BL")
+      result << __TRI__(Down, half_w, height() - half_w);
+    if (part_name == "TRI_BR")
+      result << __TRI__(Down, width() - half_w, height() - half_w);
+
+#undef __TRI__
   } // for
 
   return result;

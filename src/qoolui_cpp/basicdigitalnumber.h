@@ -29,8 +29,16 @@ public:
   void paint(QPainter* painter) override;
 
 protected:
-  QPainterPath partBoxPath(qreal x, qreal y, qreal w, qreal h,
-    qreal shrink = 0, bool vertical = false) const;
+  enum TriDirection { Left, Right, Up, Down };
+
+  QPainterPath partBoxPath(
+    qreal w, qreal h, qreal shrink = 0, bool vertical = false) const;
+
+  QPainterPath partInnerBoxPath(
+    qreal w, qreal h, qreal shrink = 0, bool lowerRight = true) const;
+
+  QPainterPath partTrianglePath(
+    qreal shrink = 0, TriDirection direction = Down) const;
 
   QList<QPainterPath> forgePartPaths(QStringList& parts) const;
 
