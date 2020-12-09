@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-find_package(Qt5 COMPONENTS Core Quick REQUIRED)
+find_package(Qt6 COMPONENTS Core Quick QuickControls2 REQUIRED)
 
 add_executable(QoolUIExampleApp
   main.cpp
@@ -26,4 +26,4 @@ target_compile_definitions(QoolUIExampleApp
 
 target_link_libraries(QoolUIExampleApp
   QoolUI
-  Qt5::Core Qt5::Quick)
+  Qt6::Core Qt::Quick Qt::QuickControls2)

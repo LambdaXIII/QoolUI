@@ -1,13 +1,18 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_CXX_STANDARD 17)
-find_package(Qt5 COMPONENTS Core Quick REQUIRED)
+project(QoolUI)
+
+find_package(Qt6 COMPONENTS Core Quick QuickControls2 REQUIRED)
+#find_package(Qt6 COMPONENTS Core QuickControls2 Qml REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-project(QoolUI)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
 
 set(target_name "QoolUI")
 
@@ -24,7 +29,10 @@ target_include_directories(${target_name}
 
 target_compile_definitions(${target_name} PRIVATE DLL_EXPORT)
 
-target_link_libraries(${target_name} Qt5::Core Qt5::Quick)
+target_link_libraries(${target_name}
+  PRIVATE Qt6::Core
+          Qt6::Quick
+          Qt::QuickControls2)
 
 if(WIN32)
   target_compile_definitions(${target_name} PRIVATE OS_WIN)

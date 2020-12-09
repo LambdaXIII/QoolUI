@@ -1,6 +1,7 @@
 #include "basicdigitalnumber.h"
 
 #include <QDebug>
+#include <QFile>
 #include <QtMath>
 
 QOOL_NS_BEGIN

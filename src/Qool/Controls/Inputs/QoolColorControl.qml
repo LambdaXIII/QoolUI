@@ -1,5 +1,7 @@
-import QtQuick 2.14
-import QtQuick.Dialogs 1.2
+import QtQuick
+//import QtQuick.Dialogs 1.2
+import QtQuick.Controls
+import Qt.labs.platform 1.1
 import Qool.Styles 1.0
 import Qool.Components 1.0
 import "internal_functions.js" as IntFuncs
@@ -33,7 +35,7 @@ BasicInputControl {
     onVisibleChanged: if (visible) {
                         color = control.value
                       }
-    showAlphaChannel: control.alphaEnabled
+    options: control.alphaEnabled ? ColorDalog.showAlphaChannels : 0
   } //colorDialog
 
   contentItem: Item {

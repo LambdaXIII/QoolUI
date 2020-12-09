@@ -1,6 +1,6 @@
 pragma Singleton
 
-import QtQuick 2.0
+import QtQuick
 
 QtObject {
   id: coolStyle
@@ -51,5 +51,7 @@ QtObject {
   property real tooltipTextFontPixelSize: 10
   property real dialogTitleFontPixelSize: controlTitleFontPixelSize
 
-  function good(){console.log("good")}
+  function good() {
+    console.log("good")
+  }
 }

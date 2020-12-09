@@ -1,5 +1,5 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
+import QtQuick
+import QtQuick.Controls
 import Qool.Controls.Inputs 1.0
 import Qool.Controls 1.0
 

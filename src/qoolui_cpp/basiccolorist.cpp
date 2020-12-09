@@ -62,9 +62,8 @@ QMap<QString, QString>& BasicColorist::nameMap() {
     QTextStream s(&table);
     QMap<QString, QString> res;
     while (! s.atEnd()) {
-      auto pairs = s.readLine().splitRef(',');
-      res[pairs.last().toString().simplified()] =
-        pairs.first().toString().simplified();
+      auto pairs = s.readLine().split(',');
+      res[pairs.last().simplified()] = pairs.first().simplified();
     }
     m_nameMap = res;
   }
