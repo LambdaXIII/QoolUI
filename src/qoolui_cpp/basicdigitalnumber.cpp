@@ -24,7 +24,7 @@ BasicDigitalNumber::BasicDigitalNumber(QQuickItem* p)
 void BasicDigitalNumber::paint(QPainter* painter) {
   auto code = partCode(m_text.at(0));
   auto parts = forgePartPaths(code);
-  qDebug() << parts;
+  //  qDebug() << parts;
   for (const auto& path : parts)
     painter->fillPath(path, QBrush(m_partColor));
 }

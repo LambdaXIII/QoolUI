@@ -31,7 +31,7 @@ target_compile_definitions(${target_name} PRIVATE DLL_EXPORT)
 
 target_link_libraries(${target_name}
   PRIVATE Qt6::Core
-          Qt6::Quick
+          Qt::Quick
           Qt::QuickControls2)
 
 if(WIN32)
