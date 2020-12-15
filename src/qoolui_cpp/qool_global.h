@@ -1,7 +1,7 @@
 #ifndef QOOL_GLOBAL_H
 #define QOOL_GLOBAL_H
 
-#include <QObject>
+//#include <QObject>
 
 #ifdef OS_WIN
   #ifdef DLL_EXPORT
