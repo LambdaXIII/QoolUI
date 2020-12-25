@@ -16,8 +16,9 @@ Window {
   width: 500
   height: 400
 
-  modality: Qt.WindowModal
+  modality: Qt.ApplicationModal
   flags: Qt.CustomizeWindowHint | Qt.FramelessWindowHint | Qt.WindowSystemMenuHint | Qt.Dialog
+  //  flags: Qt.CustomizeWindowHint | Qt.FramelessWindowHint | Qt.WindowSystemMenuHint
   color: "transparent"
 
   property bool showToolBar: true
