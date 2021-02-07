@@ -1,6 +1,6 @@
-import QtQuick
+import QtQuick 2.14
 //import QtQuick.Dialogs 1.2
-import QtQuick.Controls
+import QtQuick.Controls 2.14
 import Qt.labs.platform 1.1
 import Qool.Styles 1.0
 import Qool.Components 1.0

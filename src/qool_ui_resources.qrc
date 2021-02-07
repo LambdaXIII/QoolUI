@@ -49,5 +49,6 @@
         <file>Qool/Components/RoundCornerBox.qml</file>
         <file>Qool/Components/DigitalNumber.qml</file>
         <file>Qool/assets/digital_number_map.csv</file>
+        <file>Qool/Controls/Decorations/QoolDigitalTImecode.qml</file>
     </qresource>
 </RCC>

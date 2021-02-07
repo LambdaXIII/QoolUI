@@ -1,6 +1,6 @@
 pragma Singleton
 
-import QtQuick
+import QtQuick 2.14
 
 QtObject {
   id: coolStyle
